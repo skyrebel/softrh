@@ -1,13 +1,12 @@
 body{
-<<<<<<< HEAD
+
     height: 100vh;
     background: linear-gradient(#FF6C00, #FF3C00);
 }
 
 .btn{
-
-    color:white
-=======
+    border: solid 1px white;
+    color:white;
     background: linear-gradient(#FF6C00, #FF3C00);
 }
 
@@ -15,9 +14,7 @@ body{
     height: 100vh;
     width: 100wh;
     
-<<<<<<< HEAD
->>>>>>> e7c0e343570f065ea2258ccdd66832e254c00323
-=======
+
 }
 .input-line{
     border-left: none;
@@ -27,5 +24,5 @@ body{
 }
 .form-control{
     background-color: transparent !important;
->>>>>>> f1048d9a451d6305fdd99e80b35106ffa98cd255
+
 }
