@@ -10,39 +10,52 @@
     <link rel="stylesheet" href="style.css">
     <title>Soft_rh</title>
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Soft_rh</title>
 
 </head>
 
 
 <body>
-    <div class="container-fluid ">
+    <div class="container-fluid">
+
         <div class="container">
             <div class="row justify-content-center">
-                <form class="col-6">
-
-                    <div class="form-group">
-                        <!-- <label for="exampleInputEmail1">Identifiant</label> -->
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Identifiant">
-                        <small id="emailHelp" class="form-text text-muted"></small>
+                <div class="logo justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="col-lg-6 m-0">
+                            <a><img class="pt-5 img-fluid" src="media/logo.png" alt="logo"></a>
+                       
+                        <div>
+                            <a><img class="pt-5 img-fluid" src="media/soft-rh.png" alt="soft-rh"></a>
+                        </div> 
                     </div>
-                    <div class="form-group">
-                        <!-- <label for="exampleInputPassword1">Password</label> -->
-                        <input type="password" class="form-control" id="exampleInputPassword1"
-                            placeholder="Mot de passe">
+                        <form>
+                            <div class="form-group pt-5">
+                                <!-- <label for="exampleInputEmail1">Identifiant</label> -->
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Identifiant">
+                                <small id="emailHelp" class="form-text text-muted"></small>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="exampleInputPassword1">Password</label> -->
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Mot de passe">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Cocher la casse</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Entrer</button>
+                        </form>
                     </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Cocher la case</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary border border-radius">Entrer</button>
-                </form>
-
+                </div>
             </div>
-
         </div>
     </div>
-
 
 
 

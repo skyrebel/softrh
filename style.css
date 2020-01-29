@@ -1,4 +1,5 @@
 body{
+<<<<<<< HEAD
     height: 100vh;
     background: linear-gradient(#FF6C00, #FF3C00);
 }
@@ -6,4 +7,13 @@ body{
 .btn{
 
     color:white
+=======
+    background: linear-gradient(#FF6C00, #FF3C00);
+}
+
+.container-fluid{
+    height: 100vh;
+    width: 100wh;
+    
+>>>>>>> e7c0e343570f065ea2258ccdd66832e254c00323
 }
