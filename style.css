@@ -15,5 +15,17 @@ body{
     height: 100vh;
     width: 100wh;
     
+<<<<<<< HEAD
 >>>>>>> e7c0e343570f065ea2258ccdd66832e254c00323
+=======
+}
+.input-line{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    background-color: none ;
+}
+.form-control{
+    background-color: transparent !important;
+>>>>>>> f1048d9a451d6305fdd99e80b35106ffa98cd255
 }
