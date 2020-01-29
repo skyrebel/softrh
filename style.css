@@ -7,3 +7,12 @@ body{
     width: 100wh;
     
 }
+.input-line{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    background-color: none ;
+}
+.form-control{
+    background-color: transparent !important;
+}
