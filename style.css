@@ -16,3 +16,7 @@ body{
 .form-control{
     background-color: transparent !important;
 }
+
+#choice-emoji{
+    background-color: white;
+}
