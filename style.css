@@ -16,6 +16,12 @@ body{
     
 
 }
+
+.btn{
+    background: linear-gradient(#FF6C00, #FF3C00);
+    border: solid 1px white;
+
+}
 .input-line{
     border-left: none;
     border-right: none;
@@ -24,5 +30,8 @@ body{
 }
 .form-control{
     background-color: transparent !important;
+}
 
+#choice-emoji{
+    background-color: white;
 }
