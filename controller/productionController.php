@@ -1,14 +1,22 @@
 <?php
-
+require_once 'vendor/autoload.php';
 require_once 'core/db.php';
 require_once 'model/productions.php';
 
 function defaultAction(){
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+$twig = new \Twig\Environment($loader, [
+    'cache' => false,
+]);
     $productions = getproductionsAll();
     require_once 'view/productions.html.php';
 }
 
 function detailAction(){
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+$twig = new \Twig\Environment($loader, [
+    'cache' =>false,
+]);
     global $uri;
     // RÉCUPÉRER L'ID
     $exprReg = "#/[0-9]+#";
