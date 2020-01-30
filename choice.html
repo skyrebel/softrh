@@ -23,12 +23,92 @@
 
 <body>
 
+<<<<<<< HEAD:choice.html
+    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <canvas id="chart"></canvas>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<div style="width: 45%">
+    <canvas id="myChart"></canvas>
+</div>
+
+    <script>
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 00, 55)',
+            borderColor: 'rgb(212, 124, 185)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+    
+    
+    <!-- <script type="text/javascript" src="http://google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", 1.0, { "package" : ["corechart"]});
+google.setOnLoadCallback(createGraph);
+function createGraph()
+{
+    var data = new google.visualization.DataTable();
+    data.addColumn("string","humeur");
+    data.addColumn("number","nb de vote");
+    data.addRows([
+
+            [       "row1"],
+            [       "row2"],
+            [       "row3"]
+
+    ]);
+
+var option = {"title": "admin", "width":800, "height":600}
+
+var chart = new google.visualization.PieChart(document.getElementById('container'));
+chart.draw(data, options);
+
+}
+
+
+
+
+</script> -->
+
+
+=======
     <div class="chart-container" style="position: relative; height:5vh; width 100vw">
         <canvas id="chart"></canvas>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+>>>>>>> 184aaadde5355ec26cfad20bb37be1b4b3631b9c:choice.html
 
 
     <section id="choice-emoji">

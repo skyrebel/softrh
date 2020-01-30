@@ -13,8 +13,20 @@ body{
 .container-fluid{
     height: 100vh;
     width: 100wh;
-    
+    }
 
+.row{
+
+
+}
+
+.yellow{
+
+    background-color: #FF6C00;
+}
+
+.form-control{
+    background-color: white;
 }
 
 .btn{
