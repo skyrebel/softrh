@@ -28,7 +28,7 @@
             Morris.Bar({
                 element: 'morris-bar-chart',
                 data: [{
-                    y: '2006',
+                    y: '2001',
                     a: 100,
                     b: 90
                 }, {
@@ -63,22 +63,8 @@
                 resize: true
             });
 
-            /* MORRIS DONUT CHART
-			----------------------------------------*/
-            Morris.Donut({
-                element: 'morris-donut-chart',
-                data: [{
-                    label: "Download Sales",
-                    value: 12
-                }, {
-                    label: "In-Store Sales",
-                    value: 30
-                }, {
-                    label: "Mail-Order Sales",
-                    value: 20
-                }],
-                resize: true
-            });
+
+            
 
             /* MORRIS AREA CHART
 			----------------------------------------*/
