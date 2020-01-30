@@ -1,4 +1,14 @@
 body{
+
+    height: 100vh;
+    background: linear-gradient(#FF6C00, #FF3C00);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn{
+    border: solid 1px white;
+    color:white;
     background: linear-gradient(#FF6C00, #FF3C00);
 }
 
@@ -6,6 +16,13 @@ body{
     height: 100vh;
     width: 100wh;
     
+
+}
+
+.btn{
+    background: linear-gradient(#FF6C00, #FF3C00);
+    border: solid 1px white;
+
 }
 .input-line{
     border-left: none;
@@ -19,4 +36,14 @@ body{
 
 #choice-emoji{
     background-color: white;
+}
+
+.bonjour{
+
+    color: #FF3C00 ;
+}
+
+.img{
+    background-color: black;
+    color: black;
 }
