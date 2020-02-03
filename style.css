@@ -15,7 +15,8 @@ body{
     width: 100wh;
     }
 
-.row{
+.chart-container{
+    background-color: white;
 
 
 }
@@ -51,9 +52,6 @@ body{
 .bonjour{
 
     color: #FF3C00 ;
+    font-size: 3rem;
 }
 
-.img{
-    background-color: black;
-    color: black;
-}

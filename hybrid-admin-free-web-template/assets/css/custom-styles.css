@@ -10,7 +10,7 @@ http://creativecommons.org/licenses/by/3.0/
 ------------------------------------------------*/
 body {
     font-family: 'Open Sans', sans-serif;
-  background: #32C2CD url(../img/bg-img.jpg) !important;
+  background: rgb(100, 98, 98) !important;
   
 }
 
@@ -449,7 +449,7 @@ line-height: 21px;
 padding-top: 4px;
 }
 .active-menu {
-    background-color: #18A0A9 !important;
+  background: linear-gradient(to left,#FF6C00, #FF3C00) !important;
     color: #fff !important;
 }
 .active-menu i{
