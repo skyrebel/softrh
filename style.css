@@ -1,7 +1,12 @@
 body{
 
     height: 100vh;
-    /* background: linear-gradient(#FF6C00, #FF3C00); */
+    background: linear-gradient(#FF6C00, #FF3C00);
+<<<<<<< HEAD
+    background-repeat: no-repeat;
+    background-size: cover;
+=======
+>>>>>>> 82eefd7dfc92ae07ba547004371a220e5d72fabd
 }
 
 .btn{
@@ -13,8 +18,21 @@ body{
 .container-fluid{
     height: 100vh;
     width: 100wh;
-    
+    }
 
+.chart-container{
+    background-color: white;
+
+
+}
+
+.yellow{
+
+    background-color: #FF6C00;
+}
+
+.form-control{
+    background-color: white;
 }
 
 .btn{
@@ -35,3 +53,10 @@ body{
 #choice-emoji{
     background-color: white;
 }
+
+.bonjour{
+
+    color: #FF3C00 ;
+    font-size: 3rem;
+}
+
