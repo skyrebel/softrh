@@ -26,37 +26,36 @@
             Morris.Bar({
                 element: 'morris-bar-chart',
                 data: [{
-                    y: '2006',
-                    a: 100,
-                    b: 90
-                }, {
-                    y: '2007',
-                    a: 75,
-                    b: 65
-                }, {
-                    y: '2008',
+                    y: 'lundi',
                     a: 50,
-                    b: 40
+                    b: 60 ,
+                    c: 15                
                 }, {
-                    y: '2009',
+                    y: 'mardi',
                     a: 75,
-                    b: 65
+                    b: 65,
+                    c: 25
                 }, {
-                    y: '2010',
+                    y: 'mercredi',
                     a: 50,
-                    b: 40
+                    b: 40,
+                    c: 60
                 }, {
-                    y: '2011',
+                    y: 'jeudi',
                     a: 75,
-                    b: 65
+                    b: 65,
+                    c: 80
                 }, {
-                    y: '2012',
-                    a: 100,
-                    b: 90
-                }],
+                    y: 'vendredi',
+                    a: 50,
+                    b: 40,
+                    c: 75
+                }, 
+                
+                ],
                 xkey: 'y',
-                ykeys: ['a', 'b'],
-                labels: ['Series A', 'Series B'],
+                ykeys: ['a', 'b', 'c'],
+                labels: ['Series A', 'Series B', 'Series C'],
 				 barColors: [
     '#A6A6A6','#24C2CE',
     '#A8E9DC' 
@@ -76,12 +75,12 @@
             Morris.Line({
                 element: 'morris-line-chart',
                 data: [
-					  { y: '2014', a: 50, b: 90},
-					  { y: '2015', a: 165,  b: 185},
-					  { y: '2016', a: 150,  b: 130},
-					  { y: '2017', a: 175,  b: 160},
-					  { y: '2018', a: 80,  b: 65},
-					  { y: '2019', a: 90,  b: 70},
+					  { y: '2014', a: 50, b: 90, c:40},
+					  { y: '2015', a: 165,  b: 185, c: 85},
+					  { y: '2016', a: 150,  b: 130, c:65},
+					  { y: '2017', a: 175,  b: 160, c:145},
+					  { y: '2018', a: 80,  b: 65, c: 189},
+					  { y: '2019', a: 90,  b: 70}, 
 					  { y: '2020', a: 100, b: 125},
 					  { y: '2021', a: 155, b: 175},
 					  { y: '2022', a: 80, b: 85},
@@ -91,7 +90,7 @@
             
 				 
       xkey: 'y',
-      ykeys: ['a', 'b'],
+      ykeys: ['a', 'b', 'c'],
       labels: ['Total Income', 'Total Outcome'],
       fillOpacity: 0.6,
       hideHover: 'auto',
