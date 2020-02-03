@@ -23,22 +23,22 @@ function drawColColors() {
         [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
       ]);
 
-      var options = {
-        title: 'Motivation and Energy Level Throughout the Day',
-        colors: ['#9575cd', '#33ac71'],
-        hAxis: {
-          title: 'Time of Day',
-          format: 'h:mm a',
-          viewWindow: {
-            min: [7, 30, 0],
-            max: [17, 30, 0]
-          }
-        },
-        vAxis: {
-          title: 'Rating (scale of 1-10)'
-        }
-      };
+    //   var options = {
+    //     title: 'Motivation and Energy Level Throughout the Day',
+    //     colors: ['#9575cd', '#33ac71'],
+    //     hAxis: {
+    //       title: 'Time of Day',
+    //       format: 'h:mm a',
+    //       viewWindow: {
+    //         min: [7, 30, 0],
+    //         max: [17, 30, 0]
+    //       }
+    //     },
+    //     vAxis: {
+    //       title: 'Rating (scale of 1-10)'
+    //     }
+    //   };
 
-      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
-    }
+    //   var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    //   chart.draw(data, options);
+    // }
