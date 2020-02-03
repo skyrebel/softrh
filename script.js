@@ -41,4 +41,5 @@ function drawColColors() {
 
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
       chart.draw(data, options);
+      console.log('chart');
     }
