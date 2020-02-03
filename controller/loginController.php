@@ -1,15 +1,15 @@
 <?php
 
 require_once 'core/db.php';
-require_once 'model/informatiques.php';
+require_once 'model/login.php';
 
 function defaultAction(){
     $loader = new \Twig\Loader\FilesystemLoader('view');
 $twig = new \Twig\Environment($loader, [
     'cache' => false,
 ]);
-    $informatiques = getinformatiquesAll();
-    require_once 'view/informatiques.html.php';
+    $logins = getloginsAll();
+    require_once 'view/logins.html.php';
 }
 
 function detailAction(){
@@ -29,15 +29,15 @@ $twig = new \Twig\Environment($loader, [
     }
 
     $id = intval( substr($matches[0], 1) );
-    $informatique = getinformatiquesByid($id);
-    var_dump($informatique);
+    $login = getloginsByid($id);
+    var_dump($logins);
 
-    if ( $informatique === false ){
+    if ( $login === false ){
         require_once 'view/votefait.html.php';
         return;
     }
 
-    require_once 'view/detailinformatique.html.php';
+    require_once 'view/detaillogin.html.php';
 }
 
 
