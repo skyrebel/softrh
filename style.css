@@ -2,11 +2,8 @@ body{
 
     height: 100vh;
     background: linear-gradient(#FF6C00, #FF3C00);
-<<<<<<< HEAD
     background-repeat: no-repeat;
     background-size: cover;
-=======
->>>>>>> 82eefd7dfc92ae07ba547004371a220e5d72fabd
 }
 
 .btn{
@@ -33,6 +30,11 @@ body{
 
 .form-control{
     background-color: white;
+}
+
+.bg-form{
+    background-color: rgba(255, 68, 0, 0.637);
+    height: 100vh;
 }
 
 .btn{
