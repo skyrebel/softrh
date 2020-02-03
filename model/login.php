@@ -1,16 +1,16 @@
 <?php
 
-function getmaintenancesAll(){
+function getloginsAll(){
     global $pdo;
-    $sql = 'SELECT id, nom, prenom, mail, mot de passe from maintenances';
+    $sql = 'SELECT id, Utilisateur, Services from logins';
     $sth = $pdo->prepare($sql);
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getmaintenancesByid($id){
+function getloginsByid($id){
     global $pdo;
-    $sql = 'SELECT id, nom, prenom, mail, mot de passe from maintenances where id = :id';
+    $sql = 'SELECT id, id, Utilisateur, Services from logins where id = :id';
     $sth = $pdo->prepare($sql);
     $sth->bindParam(':id', $id, PDO::PARAM_INT);
     $sth->execute();

@@ -1,6 +1,6 @@
 body{
 
- 
+    /* height: 100vh; */
     background: linear-gradient(#FF6C00, #FF3C00);
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,55 +11,45 @@ body{
     border: solid 1px white;
     color:white;
     background: linear-gradient(#FF6C00, #FF3C00);
-}
-
-.container-fluid{
+    }
+    
+    .container-fluid{
     /* height: 100vh; */
     width: 100wh;
     }
-
-.chart-container{
+    
+    .chart-container{
     background-color: white;
-
-
-}
-
-/* .yellow{
-
-    background-color: #FF6C00;
-} */
-
-.form-control{
+        
+    }
+        
+    .form-control{
     background-color: white;
-}
-
-.bg-form{
-    background-color: rgba(255, 68, 0, 0.637);
-    /* height: 100vh; */
-}
-
-.btn{
+    }
+    
+    .btn{
     background: linear-gradient(#FF6C00, #FF3C00);
     border: solid 1px white;
-
-}
-.input-line{
+    
+    }
+    .input-line{
     border-left: none;
     border-right: none;
     border-top: none;
     background-color: none ;
-}
-.form-control{
+    }
+    .form-control{
     background-color: transparent !important;
-}
-
-#choice-emoji{
+    }
+    
+    #choice-emoji{
     background-color: white;
-}
-
-.bonjour{
-
+    }
+    
+    .bonjour{
+    
     color: #FF3C00 ;
     font-size: 3rem;
-}
+    }
+    
 
