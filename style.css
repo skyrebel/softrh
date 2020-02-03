@@ -1,19 +1,19 @@
 body{
 
-    height: 100vh;
+    /* height: 100vh; */
     background: linear-gradient(#FF6C00, #FF3C00);
     background-repeat: no-repeat;
     background-size: cover;
-    }
-    
-    .btn{
+}
+
+.btn{
     border: solid 1px white;
     color:white;
     background: linear-gradient(#FF6C00, #FF3C00);
     }
     
     .container-fluid{
-    height: 100vh;
+    /* height: 100vh; */
     width: 100wh;
     }
     
@@ -23,10 +23,7 @@ body{
     
     }
     
-    .yellow{
     
-    background-color: #FF6C00;
-    }
     
     .form-control{
     background-color: white;
