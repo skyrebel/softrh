@@ -14,9 +14,9 @@ $twig = new \Twig\Environment($loader, [
 
 function detailAction(){
     $loader = new \Twig\Loader\FilesystemLoader('view');
-$twig = new \Twig\Environment($loader, [
-    'cache' =>false,
-]);
+    $twig = new \Twig\Environment($loader, [
+        'cache' =>false,
+    ]);
     global $uri;
     // RÉCUPÉRER L'ID
     $exprReg = "#/[0-9]+#";
@@ -24,7 +24,7 @@ $twig = new \Twig\Environment($loader, [
     var_dump($matches);
 
     if( count($matches) === 0 ){
-        require_once 'view/votefait.html.php';
+        $template = $twig->load('index.html.twig');
         return;
     }
 
