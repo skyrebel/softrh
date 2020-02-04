@@ -1,20 +1,5 @@
-{% extends 'base.html.twig' %}
-
-{% block content %}
-    <table>
-    <tr>
-    <th>Titre</th>
-    <th>Date</th>
-    <th>Action</th>
-    </tr>
-    {% for projet in projets %}
-    <tr>
-    {# variable twig pour afficher le nom du projet #}
-        <td>{{ projet.name }}</td>
-        <td>{{ projet.date| date('d/m/Y') }}</td>
-        <td><a href="{{ path('projet_delete', {id: projet.id}) }}">Supprimer</a><a href="">Modifier</a></td>
-    </tr>
-        
-    {% endfor %}
-    </table>
-{% endblock %}
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]

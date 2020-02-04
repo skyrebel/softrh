@@ -18,8 +18,8 @@ body{
 .container-fluid{
     width: 100wh;
     }
-
-.chart-container{
+    
+    .chart-container{
     background-color: white;
 
 
@@ -42,15 +42,15 @@ body{
 .btn{
     background: linear-gradient(#FF6C00, #FF3C00);
     border: solid 1px white;
-
-}
-.input-line{
+    
+    }
+    .input-line{
     border-left: none;
     border-right: none;
     border-top: none;
     background-color: none ;
-}
-.form-control{
+    }
+    .form-control{
     background-color: transparent !important;
 }
 
