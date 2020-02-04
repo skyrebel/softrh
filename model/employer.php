@@ -1,12 +1,16 @@
 <?php
 
-function getemployersAll()
+function getHumeurAll()
 {
     global $pdo;
-    $sql = 'SELECT Nom, Mot-de-passe, Role, from Utilisateur';
+    $sql = 'SELECT id, nom, emoticone from Humeur';
     $sth = $pdo->prepare($sql);
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);
+
 }
+
+
+
 
 
