@@ -4,41 +4,18 @@ require_once 'core/db.php';
 require_once 'model/login.php';
 
 function defaultAction(){
-    $loader = new \Twig\Loader\FilesystemLoader('view');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false,
-]);
-    $logins = getloginsAll();
-    require_once 'view/logins.html.php';
+    
+    // on teste la déclaration de nos variables
+    if (isset($_POST['nom']) && isset($_POST['Mot-de-passe'])) {
+        // on affiche nos résultats
+        echo 'Votre nom est '.$_POST['nom'].' et votre fonction est '.$_POST['Mot-de-passe'];
+    }
+    
+    $login = getlogin($nom, $pwd);
+    require_once 'view/login.html.php';
 }
 
-function detailAction(){
-    $loader = new \Twig\Loader\FilesystemLoader('view');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false,
-]);
-    global $uri;
-    // RÉCUPÉRER L'ID
-    $exprReg = "#/[0-9]+#";
-    preg_match($exprReg, $uri, $matches);
-    var_dump($matches);
 
-    if( count($matches) === 0 ){
-        require_once 'view/votefait.html.php';
-        return;
-    }
-
-    $id = intval( substr($matches[0], 1) );
-    $login = getloginsByid($id);
-    var_dump($logins);
-
-    if ( $login === false ){
-        require_once 'view/votefait.html.php';
-        return;
-    }
-
-    require_once 'view/detaillogin.html.php';
-}
 
 
 $action = 'default';
@@ -56,9 +33,7 @@ switch($action){
     case  "" ;    
         defaultAction();
     break;
-    case  'detail' :
-        detailAction();
-    break;
+   
     default :
       require_once 'view/404.html.php';
 }

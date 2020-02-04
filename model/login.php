@@ -1,18 +1,13 @@
 <?php
 
-function getloginsAll(){
-    global $pdo;
-    $sql = 'SELECT id, Utilisateur, Services from logins';
-    $sth = $pdo->prepare($sql);
-    $sth->execute();
-    return $sth->fetchAll(PDO::FETCH_ASSOC);
-}
 
-function getloginsByid($id){
+
+function getlogin($nom, $pwd){
     global $pdo;
-    $sql = 'SELECT id, id, Utilisateur, Services from logins where id = :id';
+    $sql = 'SELECT id, Utilisateur, Services from Utilisateur where Nom= :Nom and Mot-de-passe= :pwd';
     $sth = $pdo->prepare($sql);
-    $sth->bindParam(':id', $id, PDO::PARAM_INT);
+    $sth->bindParam(':Nom', $nom, PDO::PARAM_STR);
+    $sth->bindParam(':Mot-de-passe', $pwd, PDO::PARAM_STR);
     $sth->execute();
     return $sth->fetch(PDO::FETCH_ASSOC);
 }
