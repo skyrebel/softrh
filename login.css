@@ -1,19 +1,21 @@
-body{
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap');
 
-    /* height: 100vh; */
+
+body{
     background: linear-gradient(#FF6C00, #FF3C00);
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .btn{
     border: solid 1px white;
     color:white;
     background: linear-gradient(#FF6C00, #FF3C00);
-    }
-    
-    .container-fluid{
-    /* height: 100vh; */
+}
+
+.container-fluid{
     width: 100wh;
     }
     
@@ -30,9 +32,14 @@ body{
 
 .form-control{
     background-color: white;
-    }
-    
-    .btn{
+}
+
+.bg-form{
+    background-color: rgba(255, 68, 0, 0.637);
+    /* height: 100vh; */
+}
+
+.btn{
     background: linear-gradient(#FF6C00, #FF3C00);
     border: solid 1px white;
     
@@ -45,16 +52,6 @@ body{
     }
     .form-control{
     background-color: transparent !important;
-    }
-    
-    #choice-emoji{
-    background-color: white;
-    }
-    
-    .bonjour{
-    
-    color: #FF3C00 ;
-    font-size: 3rem;
-    }
-    
+}
+
 
