@@ -1,26 +1,88 @@
-<?php
-    require_once 'view/header.html.php'
-?>
+<!DOCTYPE html>
+<html lang="fr">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <?php
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/css/login.css">
+<title>Soft_rh</title>
 
-                    foreach( $login as $logins) {
-                        ?>
-                          <div>
-                              <p><strong>Utilisateur : </strong><?php echo $login['Utilisateur']; ?></p>
-                              <p><strong>Service : </strong><?php echo $login['mail']; ?></p>
-                              <p><strong>Mot de passe : </strong><?php echo $login['mot de passe']; ?></p>
-                              <p><a href="/login/detail/<?php echo $login['Nom'] ?>">Voir la fiche</a></p>
-                          </div>
-                        <?php
-                    }
-                ?>
+
+
+
+<title>Soft_rh</title>
+
+</head>
+
+
+<body class="py-5">
+
+    <!-- ::::::::::::::::::::::::::::::::::::::::::::::: section login :::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+
+    <section id="login-page">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row justify-content-center  ">
+                    <div class="col-lg-12">
+                        <div class="col-lg-6 m-0 mx-auto text-center">
+                            <a><img class=" img-fluid col-lg-6" src="media/logo.png" alt="logo"></a>
+
+                            <div class="p-3">
+                                <a><img class=" img-fluid" src="media/soft-rh.png" alt="soft-rh"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="col-lg-6 mx-auto my-5">
+                        <div class="form-group ">
+                            <!-- <label for="exampleInputEmail1">Identifiant</label> -->
+                            <input type="email" class="form-control input-line" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Identifiant">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="exampleInputPassword1">Password</label> -->
+                            <input type="password" class="form-control input-line" id="exampleInputPassword1"
+                                placeholder="Mot de passe">
+                        </div>
+                        <div class="col-lg-6 mx-auto">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        </div>
+                        <label class="form-check-label" for="exampleCheck1">Cocher la casse</label>
+                    </form>
+                </div>
+
+                <div class="row ">
+                    <div class="col-lg-6 mx-auto text-center ">
+                        <button type="submit" class="btn btn-primary ">Entrer</button>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
-<?php
-    require_once 'view/footer.html.php';
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
