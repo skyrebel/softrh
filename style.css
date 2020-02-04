@@ -13,7 +13,7 @@ body{
     }
     
     .container-fluid{
-     height: 100vh; 
+    /* height: 100vh; */
     width: 100wh;
     }
     
@@ -22,6 +22,8 @@ body{
     
     
     }
+    
+    
     
     .form-control{
     background-color: white;
@@ -51,4 +53,5 @@ body{
     color: #FF3C00 ;
     font-size: 3rem;
     }
+    
 
