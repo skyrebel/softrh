@@ -1,10 +1,12 @@
-body{
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap');
 
-    /* height: 100vh; */
+
+body{
     background: linear-gradient(#FF6C00, #FF3C00);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .btn{
@@ -14,7 +16,6 @@ body{
 }
 
 .container-fluid{
-    /* height: 100vh; */
     width: 100wh;
     }
     
@@ -51,16 +52,6 @@ body{
     }
     .form-control{
     background-color: transparent !important;
-    }
-    
-    #choice-emoji{
-    background-color: white;
-    }
-    
-    .bonjour{
-    
-    color: #FF3C00 ;
-    font-size: 3rem;
-    }
-    
+}
+
 
