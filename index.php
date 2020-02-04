@@ -17,7 +17,7 @@
         require_once 'controller/defaultController.php';
        break;
 
-       case"/employer" :
+       case "/employer" :
         require_once 'controller/employerController.php';
        break;
 
