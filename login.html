@@ -13,7 +13,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 
 
     <title>Soft_rh</title>
@@ -21,47 +21,59 @@
 </head>
 
 
-<body>
+<body class="py-5">
 
     <!-- ::::::::::::::::::::::::::::::::::::::::::::::: section login :::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
-    
+
     <section id="login-page">
         <div class="container-fluid">
             <div class="container">
-                <div class="row justify-content-center pb-5">
+                <div class="row justify-content-center  ">
                     <div class="col-lg-12">
                         <div class="col-lg-6 m-0 mx-auto text-center">
-                            <a><img class="pt-5 img-fluid col-lg-6 col-md-6" src="media/logo.png" alt="logo"></a>
-                            <div class="col-lg-6 col-md-6 mx-auto">
-                                <a><img class="pt-5 img-fluid" src="media/soft-rh.png" alt="soft-rh"></a>
+                            <a><img class=" img-fluid col-lg-6" src="media/logo.png" alt="logo"></a>
+
+                            <div class="p-3">
+                                <a><img class=" img-fluid" src="media/soft-rh.png" alt="soft-rh"></a>
                             </div>
                         </div>
-                        <form class="col-lg-6 mx-auto">
-                            <div class="form-group pt-5">
-                                <!-- <label for="exampleInputEmail1">Identifiant</label> -->
-                                <input type="email" class="form-control input-line" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Identifiant">
-                                <small id="emailHelp" class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="exampleInputPassword1">Password</label> -->
-                                <input type="password" class="form-control input-line" id="exampleInputPassword1"
-                                    placeholder="Mot de passe">
-                            </div>
-                            <div class="col-lg-6 mx-auto">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            </div>
-                            <label class="form-check-label" for="exampleCheck1">Cocher la casse</label>
-                            <div class="col-lg-6 mx-auto text-center">
-                                <button type="submit" class="btn btn-primary">Entrer</button>
-                            </div>
-                        </form>
                     </div>
                 </div>
+                <div class="row">
+                    <form class="col-lg-6 mx-auto my-5">
+                        <div class="form-group ">
+                            <!-- <label for="exampleInputEmail1">Identifiant</label> -->
+                            <input type="email" class="form-control input-line" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Identifiant">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="exampleInputPassword1">Password</label> -->
+                            <input type="password" class="form-control input-line" id="exampleInputPassword1"
+                                placeholder="Mot de passe">
+                        </div>
+                        <div class="col-lg-6 mx-auto">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        </div>
+                        <label class="form-check-label" for="exampleCheck1">Cocher la casse</label>
+                    </form>
+                </div>
+
+                <div class="row ">
+                    <div class="col-lg-6 mx-auto text-center ">
+                        <button type="submit" class="btn btn-primary ">Entrer</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="script.js"></script>

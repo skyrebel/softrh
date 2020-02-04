@@ -56,17 +56,11 @@
                 xkey: 'y',
                 ykeys: ['a', 'b', 'c'],
                 labels: ['Series A', 'Series B', 'Series C'],
-				 barColors: [
-    '#A6A6A6','#24C2CE',
-    '#A8E9DC' 
-  ],
+				barColors: ['#A6A6A6','#24C2CE','#A8E9DC'],
                 hideHover: 'auto',
                 resize: true
             });
 	 
-
-
-           
 
            
 
@@ -80,12 +74,12 @@
 					  { y: '2016', a: 150,  b: 130, c:65},
 					  { y: '2017', a: 175,  b: 160, c:145},
 					  { y: '2018', a: 80,  b: 65, c: 189},
-					  { y: '2019', a: 90,  b: 70}, 
-					  { y: '2020', a: 100, b: 125},
-					  { y: '2021', a: 155, b: 175},
-					  { y: '2022', a: 80, b: 85},
-					  { y: '2023', a: 145, b: 155},
-					  { y: '2024', a: 160, b: 195}
+					  { y: '2019', a: 90,  b: 70, c:147}, 
+					  { y: '2020', a: 100, b: 125, c:125},
+					  { y: '2021', a: 155, b: 175, c:35},
+					  { y: '2022', a: 80, b: 85, c: 165},
+					  { y: '2023', a: 145, b: 155, c:85},
+					  { y: '2024', a: 160, b: 195, c:95}
 				],
             
 				 
@@ -98,16 +92,16 @@
       resize: true,
       pointFillColors:['#ffffff'],
       pointStrokeColors: ['black'],
-      lineColors:['gray','#24C2CE']
+      lineColors:['#A6A6A6','#24C2CE', '#A8E9DC']
 	  
             });
            
         
             $('.bar-chart').cssCharts({type:"bar"});
-            $('.donut-chart').cssCharts({type:"donut"}).trigger('show-donut-chart');
+            // $('.donut-chart').cssCharts({type:"donut"}).trigger('show-donut-chart');
             $('.line-chart').cssCharts({type:"line"});
 
-            $('.pie-thychart').cssCharts({type:"pie"});
+            // $('.pie-thychart').cssCharts({type:"pie"});
        
 	 
         },
