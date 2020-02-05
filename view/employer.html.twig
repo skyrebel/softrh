@@ -36,26 +36,14 @@
                     </div>
 
                     <div class="row mx-auto">
+                    {% for humeur in humeurs %}
                         <div class="col-lg-4  p-md-5 p-lg-5 jello-horizontal">
-                            <img href="#" class="img-fluid" src="media/stresse.png" alt="image" width="283"
-                                height="368">
-                            <div class="text-center font-weight-bold pt-3">Stressé</div>
+                            <a href="/employer/vote/{{ humeur.id }}"><img class="img-fluid" src="{{ humeur.emoticone }}" alt="image" width="283"
+                                height="368"></a>
+                            <div class="text-center font-weight-bold pt-3">{{ humeur.nom|convert_encoding('UTF-8', 'iso-8859-1')}}</div>
                         </div>
-                        <div class="col-lg-4  p-md-5 p-lg-5 jello-horizontal">
-                            <img href="#" class="img-fluid" src="media/fatigue.png" alt="image" width="283"
-                                height="368">
-                            <div class="text-center font-weight-bold pt-3">Fatigué</div>
-                        </div>
-                        <div class="col-lg-4  p-md-5 p-lg-5 jello-horizontal">
-                            <img href="#" class="img-fluid" src="media/heureux.png" alt="image" width="283"
-                                height="368">
-                            <div class="text-center font-weight-bold pt-3">Heureux</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mx-auto col-lg-12 text-center pt-lg-5">
-                        <button type="submit" class="justify-content-center btn btn-primary">Je confirme</button>
+                    {% endfor %}
+                        
                     </div>
                 </div>
             </div>
