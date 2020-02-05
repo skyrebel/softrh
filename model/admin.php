@@ -9,12 +9,3 @@ function getadminsAll()
     return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getadminsByid($id)
-{
-    global $pdo;
-    $sql = 'SELECT id, nom, prenom, mail, mot de passe from Utilisateur where id = :id';
-    $sth = $pdo->prepare($sql);
-    $sth->bindParam(':id', $id, PDO::PARAM_INT);
-    $sth->execute();
-    return $sth->fetch(PDO::FETCH_ASSOC);
-}
