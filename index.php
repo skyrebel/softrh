@@ -19,6 +19,11 @@
         require_once 'controller/employerController.php';
        break;
 
+       case "/login" :
+        require_once 'controller/loginController.php';
+       break;
+
+
        default : 
        echo 'page 404';
    }
