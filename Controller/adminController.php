@@ -28,7 +28,7 @@ $twig = new \Twig\Environment($loader, [
         return;
     }
 
- 
+   
 
     if ( $admin === false ){
         require_once 'view/votefait.html.php';
