@@ -639,3 +639,18 @@ font-size: 19px;
   border-radius: 15px;
   background-color: yellow;
 }
+
+.marge-right {
+  margin-right: 15px;
+}
+
+.row-legend {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.text-legend {
+  color: white;
+  font-weight: bold;
+}
