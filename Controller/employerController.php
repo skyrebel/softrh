@@ -2,15 +2,19 @@
 
 require_once 'core/db.php';
 require_once 'model/employer.php';
+require_once 'vendor/autoload.php';
 
 function defaultAction(){
-
+    $humeurs = getHumeurAll();
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
     ]);
     $template = $twig->load('employer.html.twig');
-    echo $template->render();
+    echo $template->render([
+        'humeurs' => $humeurs
+    
+    ]);
 }
 
 

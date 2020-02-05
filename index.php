@@ -6,10 +6,8 @@
 
    if( $uri !== "/"){
        $positionSlash = ( strpos( $uri, "/",1) === false)? strlen( $uri) : strpos( $uri, "/",1);
-       var_dump($positionSlash);
        $controller = substr( $uri, 0,$positionSlash );
-       var_dump($controller);
-       echo 'chemin long';
+      
    }
 
    switch($controller){
