@@ -619,3 +619,23 @@ font-size: 19px;
 }
 
 
+/* ---------------------------------
+      *LEGEND*
+------------------------------------ */
+.color-choice-red{
+  height: 40px;
+  border-radius: 15px;
+  background-color: red;
+}
+
+.color-choice-orange {
+  height: 40px;
+  border-radius: 15px;
+  background-color: orangered;
+}
+
+.color-choice-yellow {
+  height: 40px;
+  border-radius: 15px;
+  background-color: yellow;
+}
