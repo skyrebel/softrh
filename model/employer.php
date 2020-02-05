@@ -10,6 +10,10 @@ function getHumeurAll()
 
 }
 
+function vote(){
+    global $pdo;
+    $sql = 'SELECT  '
+}
 
 
 
