@@ -1,24 +1,81 @@
-<?php
-    require_once 'view/header.html.php'
-?>
+<!DOCTYPE html>
+<html lang="fr">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <?php
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/choice.css">
+    <title>Soft_rh</title>
 
-                    foreach( $employer as $employers) {
-                        ?>
-                          <div>
-                              <p><strong>Prénom : </strong><?php echo $employer['prénom']; ?></p>
-                              <p><strong>Mot de passe : </strong><?php echo $employer['mot de passe']; ?></p>
-                          </div>
-                        <?php
-                    }
-                ?>
+    <title>Soft_rh</title>
+
+</head>
+
+
+<body>
+
+    <section id="choice-emoji">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="bonjour text-uppercase text-center font-weight-bold pt-lg-5 pt-md-5 pb-lg-3"> bonjour
+                        </h2>
+                    </div>
+                    <div class="row mx-auto pb-lg-5">
+                        <div class="col-lg-12 text-center">
+                            <p class="intro">Afin d’améliorer les conditions de travail et permettre à tous et
+                                chacun
+                                une meilleur<br>union au seins de l’entreprise pourrais tu nous dire en cliquant sur
+                                l’émoji<br>
+                                correspondant quelle est ton humeur aujourd'hui ?</p>
+                        </div>
+                    </div>
+
+                    <div class="row mx-auto">
+                        <div class="col-lg-4  p-md-5 p-lg-5 jello-horizontal">
+                            <img href="#" class="img-fluid" src="media/stresse.png" alt="image" width="283"
+                                height="368">
+                            <div class="text-center font-weight-bold pt-3">Stressé</div>
+                        </div>
+                        <div class="col-lg-4  p-md-5 p-lg-5 jello-horizontal">
+                            <img href="#" class="img-fluid" src="media/fatigue.png" alt="image" width="283"
+                                height="368">
+                            <div class="text-center font-weight-bold pt-3">Fatigué</div>
+                        </div>
+                        <div class="col-lg-4  p-md-5 p-lg-5 jello-horizontal">
+                            <img href="#" class="img-fluid" src="media/heureux.png" alt="image" width="283"
+                                height="368">
+                            <div class="text-center font-weight-bold pt-3">Heureux</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mx-auto col-lg-12 text-center pt-lg-5">
+                        <button type="submit" class="justify-content-center btn btn-primary">Je confirme</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-<?php
-    require_once 'view/footer.html.php';
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

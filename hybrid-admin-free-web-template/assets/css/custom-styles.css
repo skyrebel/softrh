@@ -1,13 +1,4 @@
-/*----------------------------------------------
-Author : www.webthemez.com
-License: Commons Attribution 3.0
-http://creativecommons.org/licenses/by/3.0/
-------------------------------------------------*/
 
-
-/*----------------------------------------------
-    COMMON  STYLES    
-------------------------------------------------*/
 body {
     font-family: 'Open Sans', sans-serif;
   background: rgb(100, 98, 98) !important;
@@ -15,7 +6,7 @@ body {
 }
 
 .bg-graphics {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(56, 54, 54);
 }
 
  #wrapper {
