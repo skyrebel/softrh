@@ -5,14 +5,12 @@ require_once 'model/employer.php';
 
 function defaultAction(){
 
-    // on teste la déclaration de nos variables
-    if (isset($_POST['nom']) && isset($_POST['password'])) {
-        // on affiche nos résultats
-        echo 'Votre nom est '.$_POST['nom'].' et votre fonction est '.$_POST['password'];
-    }
-    
-    $employers = getemployersAll();
-    require_once 'view/employer.html.php';
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
+    $template = $twig->load('employer.html.twig');
+    echo $template->render();
 }
 
 
