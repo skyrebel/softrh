@@ -3,7 +3,7 @@
 require_once 'core/db.php';
 require_once 'model/login.php';
 
-function defaultAction(){
+function login(){
     
     // on teste la déclaration de nos variables
     if (isset($_POST['nom']) && isset($_POST['password'])) {
@@ -14,9 +14,6 @@ function defaultAction(){
     $login = getlogin($nom, $pwd);
     require_once 'view/login.html.php';
 }
-
-
-
 
 $action = 'default';
 
@@ -33,7 +30,12 @@ switch($action){
     case  "" ;    
         defaultAction();
     break;
-   
+   case 'verif' :
+    
+   break;
+
+
+
     default :
       require_once 'view/404.html.php';
 }
