@@ -15,6 +15,8 @@ function defaultAction(){
         'humeurs' => $humeurs
     
     ]);
+
+    
 }
 
 
