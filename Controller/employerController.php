@@ -6,9 +6,9 @@ require_once 'model/employer.php';
 function defaultAction(){
 
     // on teste la déclaration de nos variables
-    if (isset($_POST['Nom']) && isset($_POST['Mot-de-passe'])) {
+    if (isset($_POST['nom']) && isset($_POST['password'])) {
         // on affiche nos résultats
-        echo 'Votre nom est '.$_POST['Nom'].' et votre fonction est '.$_POST['Mot-de-passe'];
+        echo 'Votre nom est '.$_POST['nom'].' et votre fonction est '.$_POST['password'];
     }
     
     $employers = getemployersAll();
