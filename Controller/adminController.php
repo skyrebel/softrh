@@ -28,9 +28,7 @@ $twig = new \Twig\Environment($loader, [
         return;
     }
 
-    $id = intval( substr($matches[0], 1) );
-    $admin = getadminsByid($id);
-    var_dump($employer);
+   
 
     if ( $admin === false ){
         require_once 'view/votefait.html.php';
