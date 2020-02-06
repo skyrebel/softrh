@@ -22,12 +22,13 @@ function verifAction()
             'cache' => false,
         ]);
         $template = $twig->load('login.html.twig');
-        echo $template->render(['error'=>true]);
+        echo $template->render(['error'=>true, 'errorMessage'=>'veuillez renseigner correctement les champs demandés']);
         return;
     }
     return ('view/login.html.twig');
     require_once 'view/login.html.twig';
-    
+
+   
 }
 
 $action = 'default';
