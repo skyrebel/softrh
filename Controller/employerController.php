@@ -21,6 +21,28 @@ function defaultAction(){
 
 
 
+function voteAction(){
+    global $uri;
+    $exprReg ="#\/[0-9]+#";
+    preg_match($exprReg, $uri, $matches);
+    
+    if( count($matches) === 0){
+        $humeurs = getHumeurAll();
+        $loader = new \Twig\Loader\FilesystemLoader('view');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false,
+        ]);
+        $template = $twig->load('employer.html.twig');
+        echo $template->render([
+            'humeurs' => $humeurs
+    
+        ]);
+        return;
+    }
+
+    $id = intval( substr( $matches[0], 1));
+    $film = getFilmsById($id);
+}
 
 $action = 'default';
 
@@ -37,8 +59,8 @@ switch($action){
     case  "" ;    
         defaultAction();
     break;
-    case  'detail' :
-        detailAction();
+    case  'vote' :
+        voteAction();
     break;
     default :
       require_once 'view/404.html.php';
