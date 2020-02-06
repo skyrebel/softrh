@@ -56,7 +56,7 @@
                 xkey: 'y',
                 ykeys: ['a', 'b', 'c'],
                 labels: ['Series A', 'Series B', 'Series C'],
-				barColors: ['#A6A6A6','#24C2CE','#A8E9DC'],
+				barColors: ['red','orange','yellow'],
                 hideHover: 'auto',
                 resize: true
             });
@@ -92,7 +92,7 @@
       resize: true,
       pointFillColors:['#ffffff'],
       pointStrokeColors: ['black'],
-      lineColors:['#A6A6A6','#24C2CE', '#A8E9DC']
+       lineColors:['red','orange','yellow']
 	  
             });
            

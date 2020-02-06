@@ -1,18 +1,22 @@
 <?php
 
 require_once 'core/db.php';
-require_once 'model/login.php';
+require_once 'model/employer.php';
+require_once 'vendor/autoload.php';
 
 function defaultAction(){
+    $humeurs = getHumeurAll();
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
+    $template = $twig->load('employer.html.twig');
+    echo $template->render([
+        'humeurs' => $humeurs
     
-    // on teste la déclaration de nos variables
-    if (isset($_POST['nom']) && isset($_POST['password'])) {
-        // on affiche nos résultats
-        echo 'Votre nom est '.$_POST['nom'].' et votre fonction est '.$_POST['password'];
-    }
+    ]);
+
     
-    $login = getlogin($nom, $pwd);
-    require_once 'view/login.html.php';
 }
 
 
@@ -33,7 +37,9 @@ switch($action){
     case  "" ;    
         defaultAction();
     break;
-   
+    case  'detail' :
+        detailAction();
+    break;
     default :
       require_once 'view/404.html.php';
 }

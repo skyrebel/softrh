@@ -1,17 +1,12 @@
-/*----------------------------------------------
-Author : www.webthemez.com
-License: Commons Attribution 3.0
-http://creativecommons.org/licenses/by/3.0/
-------------------------------------------------*/
 
-
-/*----------------------------------------------
-    COMMON  STYLES    
-------------------------------------------------*/
 body {
     font-family: 'Open Sans', sans-serif;
   background: rgb(100, 98, 98) !important;
   
+}
+
+.bg-graphics {
+    background-color: rgb(56, 54, 54);
 }
 
  #wrapper {
@@ -188,7 +183,7 @@ font-size: 16px;
 padding: 15px 15px 0;}
 .panel-heading {
   /* padding: 15px 15px 0px; */
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid rgb(255, 81, 0);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
@@ -624,3 +619,38 @@ font-size: 19px;
 }
 
 
+/* ---------------------------------
+      *LEGEND*
+------------------------------------ */
+.color-choice-red{
+  height: 40px;
+  border-radius: 15px;
+  background-color: red;
+}
+
+.color-choice-orange {
+  height: 40px;
+  border-radius: 15px;
+  background-color: orangered;
+}
+
+.color-choice-yellow {
+  height: 40px;
+  border-radius: 15px;
+  background-color: yellow;
+}
+
+.marge-right {
+  margin-right: 15px;
+}
+
+.row-legend {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.text-legend {
+  color: white;
+  font-weight: bold;
+}
