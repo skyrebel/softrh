@@ -27,7 +27,8 @@ function verifAction()
     }
     return ('view/login.html.twig');
     require_once 'view/login.html.twig';
-    
+
+   
 }
 
 $action = 'default';
