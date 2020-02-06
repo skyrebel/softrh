@@ -41,7 +41,6 @@ function voteAction(){
     }
 
     $id = intval( substr( $matches[0], 1));
-    $film = getFilmsById($id);
 }
 
 $action = 'default';
