@@ -12,7 +12,7 @@ function getHumeurAll()
 
 function vote(){
     global $pdo;
-    $sql = 'SELECT  '
+    $sql = 'INSERT INTO `vote`( `id_service`, `id_humeur`, `date_vote`) VALUES ($,2,"2020-02-05")
 }
 
 
