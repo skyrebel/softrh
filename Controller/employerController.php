@@ -27,7 +27,7 @@ function  hasvotedAction(){
     ]);
     $template = $twig->load('votefait.html.twig');
     echo $template->render();
-    
+
 }
 
 
@@ -51,7 +51,7 @@ function voteAction(){
     }
 
     $id = intval( substr( $matches[0], 1));
-    $film = getFilmsById($id);
+   
 }
 
 $action = 'default';
