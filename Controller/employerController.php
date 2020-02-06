@@ -39,8 +39,9 @@ function voteAction(){
         ]);
         return;
     }
-
-    $id = intval( substr( $matches[0], 1));
+    setlocale(LC_TIME, 'fra_fra');
+    $date = strftime('%d/%m/%Y');
+    $humeur_id = intval( substr( $matches[0], 1));
 }
 
 $action = 'default';
