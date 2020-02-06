@@ -19,6 +19,16 @@ function defaultAction(){
     
 }
 
+function  hasvotedAction(){
+    
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
+    $template = $twig->load('votefait.html.twig');
+    echo $template->render();
+    
+}
 
 
 function voteAction(){
