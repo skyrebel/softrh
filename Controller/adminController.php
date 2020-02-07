@@ -9,7 +9,8 @@ $twig = new \Twig\Environment($loader, [
     'cache' => false,
 ]);
     $admins = getadminsAll();
-    require_once 'view/admin.html.php';
+
+    $sql = 'SELECT id, nom IN chart FROM service';    
 }
 
 function detailAction(){
