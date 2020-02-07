@@ -80,11 +80,24 @@ function voteAction()
     $date = strftime('%d/%m/%Y');
     $humeur_id = intval( substr( $matches[0], 1));
     $id_user = $_SESSION['user']['id'];
+<<<<<<< HEAD
     header('Location: /employer/has_vote');
 =======
 
     $id = intval(substr($matches[0], 1));
 >>>>>>> ea2535e71ae8c31843b88464003015a409c9271f
+=======
+    header('Location: /employer/validationvote');
+}
+
+function validationVoteAction(){
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
+    $template = $twig->load('validation-vote.html.twig');
+    echo $template->render();
+>>>>>>> efc643d7806cf5466623a618f40b8600472e4c83
 }
 
 $action = 'default';
@@ -106,6 +119,9 @@ switch ($action) {
     break;
     case 'has_vote':
         hasvotedAction();
+    break;
+    case 'validationvote':
+        validationVoteAction();
     default :
       require_once 'view/404.html.php';
 }
