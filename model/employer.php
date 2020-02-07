@@ -14,8 +14,13 @@ function vote($id_service, $id_humeur, $date_vote)
 
 {
     global $pdo;
-<<<<<<< HEAD
-    $sql = 'INSERT INTO `vote`( `id_service`, `id_humeur`, `date_vote`) VALUES ($,2,"2020-02-05")';
+    $sql = 'INSERT INTO vote ( id_service, id_humeur, date_vote ) VALUES (:id_service,:id_humeur,:date_vote)';
+    $sth = $pdo->prepare($sql);
+    $sth->bindParam(':id_service', $id_service, PDO::PARAM_STR);
+    $sth->bindParam(':id_humeur', $id_humeur, PDO::PARAM_STR);
+    $sth->bindParam(':date_vote', $date_vote, PDO::PARAM_STR);
+    $sth->execute();
+    
 }
 
 function verifHasVoted($userId)
@@ -31,13 +36,4 @@ function verifHasVoted($userId)
 
 
 
-=======
-    $sql = 'INSERT INTO vote ( id_service, id_humeur, date_vote ) VALUES (:id_service,:id_humeur,:date_vote)';
-    $sth = $pdo->prepare($sql);
-    $sth->bindParam(':id_service', $id_service, PDO::PARAM_STR);
-    $sth->bindParam(':id_humeur', $id_humeur, PDO::PARAM_STR);
-    $sth->bindParam(':date_vote', $date_vote, PDO::PARAM_STR);
-    $sth->execute();
-    
-}
->>>>>>> 9b556631058173b9dedeea0bb2d2b9bebf2707ef
+
