@@ -25,10 +25,12 @@ body{
 
 }
 
-/* .yellow{
-
-    background-color: #FF6C00;
-} */
+.error{
+    padding-left: 15px;
+    background: rgba(245, 133, 52, 0.836);
+    border: solid 1px white;
+    border-radius: 5px;
+}
 
 .form-control{
     background-color: white;

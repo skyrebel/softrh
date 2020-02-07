@@ -94,4 +94,14 @@ body{
               transform: scale3d(1, 1, 1);
     }
   }
+
+  @media (min-width: 767px) { 
+    .row-legend{
+      margin-top: 100px;
+    }
+
+   }
+
+
+  
   
