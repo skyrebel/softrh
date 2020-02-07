@@ -25,7 +25,7 @@
 					<div class="row justify-content-center  ">
 						<div class="col-lg-12">
 							<div class="col-lg-6 m-0 mx-auto text-center">
-								<a><img class=" img-fluid col-lg-6" src="/media/logo.png" alt="logo"></a>
+								<a><img class=" img-fluid col-lg-6" src="/media/logo.png" alt="logo" width="361"></a>
 
 								<div class="p-3">
 									<a><img class=" img-fluid" src="/media/soft-rh.png" alt="soft-rh"></a>
@@ -49,16 +49,25 @@
 
 							{% if error is defined %}
 
-								<p class="error py-2 font-weight-bold text-white">{{errorMessage}}</p>
+
+								<p class="error py-2 font-weight-bold text-white text-center">{{errorMessage}}Veuillez renseigner correctement les champs demandés</p>
+
+						
 
 							{% endif %}
 
-							{% if vote is defined %}
+							
+							
+
+				
+
+							{# {% if vote is defined %}
 							
 							<p class="vote py-2 font-weight-bold text-white">{{voteMessage}}</p>
 							
 							{% endif %}
-							
+							 #}
+
 
 						</div>
 

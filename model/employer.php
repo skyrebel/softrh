@@ -23,3 +23,19 @@ function vote($id_service, $id_humeur, $date_vote)
     $sth->execute();
     
 }
+
+function verifHasVoted($userId)
+{
+    global $pdo;
+    $sql = 'SELECT id_utilisateur from has-voted where id_utilisateur = :userid and date_vote =  CURDATE() ';
+    $sth = $pdo->prepare($sql);
+    $sth->bindParam(':userid', $userId, PDO::PARAM_INT);
+    $sth->execute();
+    return $sth->fetch(PDO::FETCH_ASSOC);
+
+}
+
+
+
+  
+
