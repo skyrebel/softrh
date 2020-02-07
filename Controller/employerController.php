@@ -19,6 +19,16 @@ function defaultAction(){
     
 }
 
+function  hasvotedAction(){
+    
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
+    $template = $twig->load('votefait.html.php');
+    echo $template->render();
+    
+}
 
 
 function voteAction(){
@@ -44,7 +54,7 @@ function voteAction(){
     $date = strftime('%d/%m/%Y');
     $humeur_id = intval( substr( $matches[0], 1));
     $id_user = $_SESSION['user']['id'];
-  
+    header('Location: /employer/has_vote');
 }
 
 $action = 'default';
