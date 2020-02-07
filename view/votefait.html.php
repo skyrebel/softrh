@@ -35,11 +35,6 @@
 						</div>
 					</div>
 					<div class="row">
-
-					<?php
-                    require_once 'header.html.php';
-                        ?>
-
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
@@ -48,9 +43,7 @@
                         </div>
                     </div>
 
-                    <?php
-                        require_once 'view/footer.html.php';
-                                                
+                                         
 							
 						</div>
 					</div>

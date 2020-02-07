@@ -50,11 +50,15 @@ function voteAction(){
         ]);
         return;
     }
+
     setlocale(LC_TIME, 'fra_fra');
-    $date = strftime('%d/%m/%Y');
+    $date = strftime('%Y-%d-%m');
     $humeur_id = intval( substr( $matches[0], 1));
+    $id_service = $_SESSION['user']['id_service'];
     $id_user = $_SESSION['user']['id'];
+    vote($id_service, $humeur_id, $date);
     header('Location: /employer/has_vote');
+    
 }
 
 $action = 'default';
