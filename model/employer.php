@@ -36,4 +36,3 @@ function verifHasVoted($userId)
 
 
 
-    
