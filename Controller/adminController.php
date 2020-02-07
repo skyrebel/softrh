@@ -8,9 +8,13 @@ function defaultAction(){
 $twig = new \Twig\Environment($loader, [
     'cache' => false,
 ]);
-    $admins = getadminsAll();
+    $services = getservicesAll();
+    $template = $twig->load('service.html.twig');
+    echo $template->render([
+        'services' => $services
 
-    $sql = 'SELECT id, nom IN chart FROM service';    
+    ]);
+      
 }
 
 function detailAction(){

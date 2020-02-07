@@ -87,8 +87,7 @@ function voteAction()
     header('Location: /employer/validationvote');
 }
 
-function validationVoteAction()
-{
+function validationVoteAction(){
     session_start();
     if (!isset($_SESSION['user'])) {
         header('Location: /');
@@ -125,6 +124,6 @@ switch ($action) {
         break;
     case 'validationvote':
         validationVoteAction();
-        // default :
-        // require_once 'validationvote.html.twig';
+    // default :
+    //   require_once 'validationvote.html.twig';
 }
