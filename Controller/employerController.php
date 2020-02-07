@@ -9,7 +9,7 @@ require_once 'vendor/autoload.php';
 function defaultAction()
 {
     session_start();
-    if (isset($_SESSION['user'])) {
+    if (!isset($_SESSION['user'])) {
         header('Location: /');
         return;
     }
@@ -31,7 +31,7 @@ function defaultAction()
 function  hasvotedAction()
 {
     session_start();
-    if (isset($_SESSION['user'])) {
+    if (!isset($_SESSION['user'])) {
         header('Location: /');
         return;
     }
@@ -50,6 +50,11 @@ function  hasvotedAction()
 
 function voteAction(){
     session_start();
+
+    if (!isset($_SESSION['user'])) {
+        header('Location: /');
+        return;
+    }
 
     global $uri;
     $exprReg = "#\/[0-9]+#";
@@ -82,6 +87,12 @@ function voteAction(){
 }
 
 function validationVoteAction(){
+    session_start();
+    if (!isset($_SESSION['user'])) {
+        header('Location: /');
+        return;
+    }
+
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
         'cache' => false,

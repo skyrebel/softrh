@@ -68,4 +68,14 @@ body{
     background-color: transparent !important;
 }
 
+.btn-quitter{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    background: linear-gradient(rgba(19, 18, 17, 0.623), rgba(141, 90, 75, 0.76));
+    border: solid 1px white;
+    border-radius: 5px;
+
+}
 
