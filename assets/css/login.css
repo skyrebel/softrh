@@ -21,7 +21,13 @@ body{
     
     .chart-container{
     background-color: white;
+}
 
+.vote{
+    padding-left: 20px;
+    background: rgba(245, 133, 52, 0.836);
+    border: solid 1px white;
+    border-radius: 5px;
 
 }
 

@@ -25,13 +25,14 @@ function  hasvotedAction(){
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
     ]);
-    $template = $twig->load('votefait.html.twig');
+    $template = $twig->load('votefait.html.php');
     echo $template->render();
     
 }
 
 
 function voteAction(){
+    session_start();
     global $uri;
     $exprReg ="#\/[0-9]+#";
     preg_match($exprReg, $uri, $matches);
@@ -49,9 +50,20 @@ function voteAction(){
         ]);
         return;
     }
+    setlocale(LC_TIME, 'fra_fra');
+    $date = strftime('%d/%m/%Y');
+    $humeur_id = intval( substr( $matches[0], 1));
+    $id_user = $_SESSION['user']['id'];
+    header('Location: /employer/validationvote');
+}
 
-    $id = intval( substr( $matches[0], 1));
-    
+function validationVoteAction(){
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
+    $template = $twig->load('validation-vote.html.twig');
+    echo $template->render();
 }
 
 $action = 'default';
@@ -72,6 +84,11 @@ switch($action){
     case  'vote' :
         voteAction();
     break;
+    case 'has_vote':
+        hasvotedAction();
+    break;
+    case 'validationvote':
+        validationVoteAction();
     default :
       require_once 'view/404.html.php';
 }
