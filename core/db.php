@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 $pdo = new PDO('mysql:host=localhost;dbname=mydb', 'root', 'paracetamol');
 =======
 <<<<<<< HEAD
@@ -13,3 +14,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=mydb', 'root', '123');
 =======
 $pdo = new PDO('mysql:host=localhost;dbname=mydb', 'root', '12345');
 >>>>>>> efc643d7806cf5466623a618f40b8600472e4c83
+=======
+$pdo = new PDO('mysql:host=localhost;dbname=mydb', 'root', '123');
+>>>>>>> 9b556631058173b9dedeea0bb2d2b9bebf2707ef
