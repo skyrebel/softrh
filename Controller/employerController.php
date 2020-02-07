@@ -114,7 +114,7 @@ switch ($action) {
     case 'validationvote':
         validationVoteAction();
     // default :
-    //   require_once 'view/404.html.php';
+    //   require_once 'validationvote.html.twig';
 }
   
 
