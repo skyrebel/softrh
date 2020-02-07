@@ -50,6 +50,11 @@ function  hasvotedAction()
 
 function voteAction(){
     session_start();
+    if (isset($_SESSION['user'])) {
+        header('Location: /');
+        return;
+    }
+    
 
     global $uri;
     $exprReg = "#\/[0-9]+#";
@@ -69,19 +74,27 @@ function voteAction(){
         return;
     }
 
+   $id_user = $_SESSION['user']['id'];
+   $verifhasvote = verifHasVoted($id_user);
+   
+   if ($verifhasvote == false) {
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
 
+    $template = $twig->load('validation-vote.html.twig');
+    return;
+}
 
     setlocale(LC_TIME, 'fra_fra');
     $date = strftime('%Y-%d-%m');
     $humeur_id = intval( substr( $matches[0], 1));
     $id_service = $_SESSION['user']['id_service'];
-    $id_user = $_SESSION['user']['id'];
+    
 
     vote($id_service, $humeur_id, $date);
     header('Location: /employer/has_vote');
-
-    header('Location: /employer/has_vote');
-
 
     $id = intval(substr($matches[0], 1));
 
@@ -123,7 +136,4 @@ switch ($action) {
       require_once 'view/404.html.php';
 }
 
-        break;
  
-
-
