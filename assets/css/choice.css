@@ -99,8 +99,12 @@ body{
     .row-legend{
       margin-top: 100px;
     }
+    .padding-legend {
+      padding-bottom: 10px;
+      }
+    }
 
-   }
+   
 
 
   
