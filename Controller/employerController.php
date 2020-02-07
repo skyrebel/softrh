@@ -9,11 +9,24 @@ require_once 'vendor/autoload.php';
 function defaultAction()
 {
     session_start();
-    if (isset($_SESSION['user'])) {
+    if (!isset($_SESSION['user'])) {
         header('Location: /');
         return;
     }
-    
+
+    $id_user = $_SESSION['user']['id'];
+    $verifhasvote = verifHasVoted($id_user);
+    if ($verifhasvote !== false) { 
+        $loader = new \Twig\Loader\FilesystemLoader('view');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false,
+        ]);
+
+        $template = $twig->load('votefait.html.twig');
+        echo $template->render();
+        return;
+    }
+
     $humeurs = getHumeurAll();
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
@@ -28,10 +41,10 @@ function defaultAction()
 
 
 
-function  hasvotedAction()
+function hasvotedAction()
 {
     session_start();
-    if (isset($_SESSION['user'])) {
+    if (!isset($_SESSION['user'])) {
         header('Location: /');
         return;
     }
@@ -40,7 +53,7 @@ function  hasvotedAction()
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
     ]);
-    $template = $twig->load('votefait.html.php');
+    $template = $twig->load('validation-vote.html.twig');
     echo $template->render();
 }
 
@@ -48,13 +61,15 @@ function  hasvotedAction()
 
 
 
-function voteAction(){
+function voteAction()
+{
+   
     session_start();
-    if (isset($_SESSION['user'])) {
+
+    if (!isset($_SESSION['user'])) {
         header('Location: /');
         return;
     }
-    
 
     global $uri;
     $exprReg = "#\/[0-9]+#";
@@ -74,66 +89,70 @@ function voteAction(){
         return;
     }
 
-   $id_user = $_SESSION['user']['id'];
-   $verifhasvote = verifHasVoted($id_user);
-   
-   if ($verifhasvote == false) {
-    $loader = new \Twig\Loader\FilesystemLoader('view');
-    $twig = new \Twig\Environment($loader, [
-        'cache' => false,
-    ]);
+ 
+    $id_user = $_SESSION['user']['id'];
+    $verifhasvote = verifHasVoted($id_user);
+    if ($verifhasvote !== false) { 
+        $loader = new \Twig\Loader\FilesystemLoader('view');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false,
+        ]);
 
-    $template = $twig->load('validation-vote.html.twig');
-    return;
-}
+        $template = $twig->load('votefait.html.twig');
+        echo $template->render();
+        return;
+    }
 
     setlocale(LC_TIME, 'fra_fra');
-    $date = strftime('%Y-%d-%m');
-    $humeur_id = intval( substr( $matches[0], 1));
+    $date = strftime('%Y-%m-%d');
+    $humeur_id = intval(substr($matches[0], 1));
     $id_service = $_SESSION['user']['id_service'];
-    
+    vote($id_service, $humeur_id,$date);
 
-    vote($id_service, $humeur_id, $date);
+    userHasVote($id_user, $date);
+
     header('Location: /employer/has_vote');
-
-    $id = intval(substr($matches[0], 1));
-
+   
 }
 
-function validationVoteAction(){
+function validationVoteAction()
+{
+    session_start();
+    if (!isset($_SESSION['user'])) {
+        header('Location: /');
+        return;
+    }
+
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
     ]);
     $template = $twig->load('validation-vote.html.twig');
     echo $template->render();
-
 }
 
 $action = 'default';
 
 if (strpos($uri, '/', 1) !== false) {
-    $action = (strpos($uri, '/', strlen($controller) + 1)  === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri,  strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
+    $action = (strpos($uri, '/', strlen($controller) + 1) === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri, strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
 }
 
 
 switch ($action) {
 
-    case  'default':
-    case  "";
+    case 'default':
+    case "";
         defaultAction();
         break;
-    case  'vote':
+    case 'vote':
         voteAction();
 
-    break;
+        break;
     case 'has_vote':
         hasvotedAction();
-    break;
+        break;
     case 'validationvote':
         validationVoteAction();
-    default :
-      require_once 'view/404.html.php';
+        // default :
+        // require_once 'validationvote.html.twig';
 }
-
- 
