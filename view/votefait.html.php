@@ -36,22 +36,17 @@
 					</div>
 					<div class="row">
 
-					<?php
-                    require_once 'header.html.php';
-                        ?>
+					
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-12">
-                            <p>Vous avez déjà vôté aujourd'hui</p>
+                            <div class="col-lg-6 mx-auto my-5">
+                            <p class="vote py-2 font-weight-bold text-white">Votre vote a déjà été enregistré aujourd'hui, merci</p>
                             </div>
                         </div>
                     </div>
 
-                    <?php
-                        require_once 'view/footer.html.php';
-                                                
-							
+               
 						</div>
 					</div>
 				</form>
