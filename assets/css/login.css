@@ -21,16 +21,28 @@ body{
     
     .chart-container{
     background-color: white;
+}
 
-
+.vote{    
+    background: rgba(245, 133, 52, 0.836);
+    font-size: 1.1rem;
+ 
 }
 
 .error{
     padding-left: 15px;
     background: rgba(245, 133, 52, 0.836);
-    border: solid 1px white;
-    border-radius: 5px;
+    /* border: solid 1px white; */
+    /* border-radius: 5px; */
 }
+
+/* .btn-logout{
+    border: solid 1px white;
+    color:white;
+    background: linear-gradient(#FF6C00, #FF3C00);
+} */
+
+
 
 .form-control{
     background-color: white;
