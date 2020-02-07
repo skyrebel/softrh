@@ -13,7 +13,7 @@ function defaultAction()
         header('Location: /');
         return;
     }
-    
+
     $humeurs = getHumeurAll();
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
@@ -28,7 +28,7 @@ function defaultAction()
 
 
 
-function  hasvotedAction()
+function hasvotedAction()
 {
     session_start();
     if (!isset($_SESSION['user'])) {
@@ -48,7 +48,8 @@ function  hasvotedAction()
 
 
 
-function voteAction(){
+function voteAction()
+{
     session_start();
 
     if (!isset($_SESSION['user'])) {
@@ -76,7 +77,7 @@ function voteAction(){
 
     setlocale(LC_TIME, 'fra_fra');
     $date = strftime('%d/%m/%Y');
-    $humeur_id = intval( substr( $matches[0], 1));
+    $humeur_id = intval(substr($matches[0], 1));
     $id_user = $_SESSION['user']['id'];
 
     header('Location: /employer/has_vote');
@@ -99,33 +100,30 @@ function validationVoteAction(){
     ]);
     $template = $twig->load('validation-vote.html.twig');
     echo $template->render();
-
 }
 
 $action = 'default';
 
 if (strpos($uri, '/', 1) !== false) {
-    $action = (strpos($uri, '/', strlen($controller) + 1)  === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri,  strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
+    $action = (strpos($uri, '/', strlen($controller) + 1) === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri, strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
 }
 
 
 switch ($action) {
 
-    case  'default':
-    case  "";
+    case 'default':
+    case "";
         defaultAction();
         break;
-    case  'vote':
+    case 'vote':
         voteAction();
 
-    break;
+        break;
     case 'has_vote':
         hasvotedAction();
-    break;
+        break;
     case 'validationvote':
         validationVoteAction();
     // default :
     //   require_once 'validationvote.html.twig';
 }
-  
-
