@@ -18,6 +18,12 @@ body{
     font-size: 30px;
 }
 
+.style-text-error{
+    font-size: 30px;
+  
+}
+
+
 .bg-merci {
     background-color: orangered;
     padding-bottom: 20px;
