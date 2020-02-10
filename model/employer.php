@@ -51,8 +51,3 @@ function verifHasVoted($userId)
 
 
 
-<<<<<<< HEAD
-  
-
-=======
->>>>>>> 87e3223aa84667c0727f8ec0cc7f3be5479b12f7
