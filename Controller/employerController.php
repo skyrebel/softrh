@@ -61,7 +61,6 @@ function hasvotedAction()
 
 function voteAction()
 {
-   
     session_start();
 
     if (!isset($_SESSION['user'])) {
