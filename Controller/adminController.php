@@ -8,8 +8,13 @@ function defaultAction(){
 $twig = new \Twig\Environment($loader, [
     'cache' => false,
 ]);
-    $admins = getadminsAll();
-    require_once 'view/admin.html.php';
+    $services = getservicesAll();
+    $template = $twig->load('service.html.twig');
+    echo $template->render([
+        'services' => $services
+
+    ]);
+      
 }
 
 function detailAction(){
