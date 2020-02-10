@@ -23,9 +23,9 @@ function getservicesAll()
 function voteHumeurDay()
 
 {
-    $date = 2020-02-09;
+
     global $pdo;
-    $sql = 'SELECT h.nom, count(if (v.date_vote=:date and id_serviceservice=1 , 1 , null)) as count from humeur h left outer JOIN vote v on v.id_humeur = h.id group by h.nom';
+    $sql = "SELECT h.nom, count(if (v.date_vote = concat(year(CURRENT_DATE),'_', month(CURRENT_DATE), '_' ,day(CURRENT_DATE))  and service = 1 , 1 , null)) as count from humeur h left outer JOIN vote v on v.id_humeur = h.id group by h.nom";
     $sth = $pdo->prepare($sql);
     $sth->bindParam(':date', $date, PDO::PARAM_STR);
     $sth->execute();
@@ -36,8 +36,7 @@ function voteHumeurMonth()
 
 {
     global $pdo;
-    $sql = 'SELECT id, h.nom, count(if (date=:date and service=1 , 1 , null)) as count from humeur h left outer JOIN vote v on v.id_humeur = h.id group by h.nom';
-    $sth = $pdo->prepare($sql);
+    $sql = "SELECT h.nom, count(if (v.date_vote = concat(year(CURRENT_DATE),'_', month(CURRENT_DATE))  and service = 1 , 1 , null)) as count from humeur h left outer JOIN vote v on v.id_humeur = h.id group by h.nom";    $sth = $pdo->prepare($sql);
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
