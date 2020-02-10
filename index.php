@@ -1,5 +1,6 @@
 <?php
 
+  
    $uri = $_SERVER['REQUEST_URI'];
 
    $controller = $uri;
@@ -13,6 +14,10 @@
    switch($controller){
        case "/" :
         require_once 'controller/defaultController.php';
+       break;
+
+       case "/admin" :
+        require_once 'controller/adminController.php';
        break;
 
        case "/employer" :

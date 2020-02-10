@@ -34,13 +34,12 @@ function verifAction()
     //Création de la variable session user
     $_SESSION['user'] = $login;
 
-    if ($_SESSION['user']["role"] == 'admin') {
+    if (strtolower($_SESSION['user']["role"]) == 'admin') {
 
         header('Location: /admin');
 
         return;
-    } else {
-        $_SESSION['user']["role"] == 'employer';
+    } else {      
 
         header('Location: /employer');
 
