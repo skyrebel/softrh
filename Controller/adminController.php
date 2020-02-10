@@ -3,39 +3,40 @@
 require_once 'core/db.php';
 require_once 'model/admin.php';
 
-function defaultAction(){
+function defaultAction()
+{
     $loader = new \Twig\Loader\FilesystemLoader('view');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false,
-]);
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
     $services = getservicesAll();
     $template = $twig->load('service.html.twig');
     echo $template->render([
         'services' => $services
 
     ]);
-      
 }
 
-function detailAction(){
+function detailAction()
+{
     $loader = new \Twig\Loader\FilesystemLoader('view');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false,
-]);
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
     global $uri;
     // RÉCUPÉRER L'ID
     $exprReg = "#/[0-9]+#";
     preg_match($exprReg, $uri, $matches);
     var_dump($matches);
 
-    if( count($matches) === 0 ){
+    if (count($matches) === 0) {
         require_once 'view/votefait.html.php';
         return;
     }
 
-   
 
-    if ( $admin === false ){
+
+    if ($admin === false) {
         require_once 'view/votefait.html.php';
         return;
     }
@@ -46,22 +47,20 @@ $twig = new \Twig\Environment($loader, [
 
 $action = 'default';
 
-if( strpos( $uri, '/', 1) !== false){
-    $action = ( strpos( $uri, '/', strlen( $controller ) + 1 )  === false )? substr( $uri, strpos( $uri, '/', strlen( $controller ))+1) : substr( $uri,  strlen( $controller ) + 1, ( strpos( $uri, '/', strlen( $controller ) + 1 ) -1 ) - ( strlen( $controller ) - 1 ) -1    );
-
-    
+if (strpos($uri, '/', 1) !== false) {
+    $action = (strpos($uri, '/', strlen($controller) + 1)  === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri,  strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
 }
 
 
-switch($action){
+switch ($action) {
 
-    case  'default' :
-    case  "" ;    
+    case  'default':
+    case  "";
         defaultAction();
-    break;
-    case  'detail' :
+        break;
+    case  'detail':
         detailAction();
-    break;
-    default :
-      require_once 'view/404.html.php';
+        break;
+    default:
+        require_once 'view/404.html.php';
 }
