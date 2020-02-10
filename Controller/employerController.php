@@ -14,8 +14,6 @@ function defaultAction()
         return;
     }
 
-<<<<<<< HEAD
-=======
     $id_user = $_SESSION['user']['id'];
     $verifhasvote = verifHasVoted($id_user);
     if ($verifhasvote !== false) { 
@@ -29,7 +27,6 @@ function defaultAction()
         return;
     }
 
->>>>>>> ac2fe77c6e646f1aa2051e07ad6938151f3e277a
     $humeurs = getHumeurAll();
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
@@ -66,10 +63,6 @@ function hasvotedAction()
 
 function voteAction()
 {
-<<<<<<< HEAD
-=======
-   
->>>>>>> ac2fe77c6e646f1aa2051e07ad6938151f3e277a
     session_start();
 
     if (!isset($_SESSION['user'])) {
@@ -95,13 +88,9 @@ function voteAction()
         return;
     }
 
-<<<<<<< HEAD
     setlocale(LC_TIME, 'fra_fra');
     $date = strftime('%d/%m/%Y');
     $humeur_id = intval(substr($matches[0], 1));
-=======
- 
->>>>>>> ac2fe77c6e646f1aa2051e07ad6938151f3e277a
     $id_user = $_SESSION['user']['id'];
     $verifhasvote = verifHasVoted($id_user);
     if ($verifhasvote !== false) { 
@@ -110,7 +99,7 @@ function voteAction()
             'cache' => false,
         ]);
 
-        $template = $twig->load('votefait.html.twig');
+        $template = $twig->load('deja-vote.html.twig');
         echo $template->render();
         return;
     }
@@ -127,12 +116,8 @@ function voteAction()
    
 }
 
-<<<<<<< HEAD
-function validationVoteAction(){
-=======
 function validationVoteAction()
 {
->>>>>>> ac2fe77c6e646f1aa2051e07ad6938151f3e277a
     session_start();
     if (!isset($_SESSION['user'])) {
         header('Location: /');
@@ -169,11 +154,6 @@ switch ($action) {
         break;
     case 'validationvote':
         validationVoteAction();
-<<<<<<< HEAD
-    // default :
-    //   require_once 'validationvote.html.twig';
-=======
         // default :
         // require_once 'validationvote.html.twig';
->>>>>>> ac2fe77c6e646f1aa2051e07ad6938151f3e277a
 }
