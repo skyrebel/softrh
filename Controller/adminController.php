@@ -19,6 +19,7 @@ function defaultAction()
     $listHumeur = getHumeursAll();
     $votesCurrentDay = getAllVotesCurrentDay();
     $votesCurrentMonth = getAllVotesCurrentMonth();
+    $services = getservicesAll();
     $role = $_SESSION['user']['role'];
     $listOfDayMonth = [];
     
@@ -38,14 +39,15 @@ function defaultAction()
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
     ]);
-    $services = getservicesAll();
+
     $template = $twig->load('admin.html.twig');
     echo $template->render([
         'listHumeur' => $listHumeur,
         'votesCurrentDay' => $votesCurrentDay,
         'votesCurrentMonth' => $votesCurrentMonth,
         'role' => $role,
-        'listOfDayMonth' => $listOfDayMonth
+        'listOfDayMonth' => $listOfDayMonth,
+        'services' => $services
 
 
     ]);

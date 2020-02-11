@@ -26,7 +26,7 @@
             Morris.Bar({
                 element: 'morris-bar-chart',
                 data: [{
-                    y: 'lundi',
+                    y: 'jeudi',
                     a: 50,
                     b: 60 ,
                     c: 15                
@@ -117,9 +117,9 @@
             });
            
         
-            $('.bar-chart').cssCharts({type:"bar"});
+            $('#morris-bar-chart').cssCharts({type:"bar"});
             // $('.donut-chart').cssCharts({type:"donut"}).trigger('show-donut-chart');
-            $('.line-chart').cssCharts({type:"line"});
+            $('#morris-line-chart').cssCharts({type:"line"});
 
             // $('.pie-thychart').cssCharts({type:"pie"});
        

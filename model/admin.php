@@ -12,7 +12,7 @@ function getadminsAll()
 function getservicesAll()
 {
     global $pdo;
-    $sql = 'SELECT id, nom from Service';
+    $sql = 'SELECT id, nom from service';
     $sth = $pdo->prepare($sql);
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@ function getservicesAll()
 function getHumeursAll()
 {
     global $pdo;
-    $sql = 'SELECT id, nom, emoticone from humeur';
+    $sql = 'SELECT id, nom, emoticone, class_color from humeur';
     $sth = $pdo->prepare($sql);
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);
