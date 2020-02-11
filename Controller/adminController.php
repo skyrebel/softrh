@@ -18,7 +18,6 @@ function defaultAction()
     $lastDayOfMonth = lastDayCurrentMonth();
     $listHumeur = getHumeursAll();
     $votesCurrentWeek = [];
-    $votesCurrentMonth = getAllVotesCurrentMonth();
     $role = $_SESSION['user']['role'];
     $listOfDayMonth = [];
     
@@ -56,8 +55,8 @@ function defaultAction()
     $template = $twig->load('admin.html.twig');
     echo $template->render([
         'listHumeur' => $listHumeur,
-        'votesCurrentDay' => $votesCurrentWeek,
-        'votesCurrentMonth' => $votesCurrentMonth,
+        'votesCurrentweek' => $votesCurrentWeek,
+    
         'role' => $role,
         'listOfDayMonth' => $listOfDayMonth
 
