@@ -20,7 +20,7 @@ function getservicesAll()
 function getHumeursAll()
 {
     global $pdo;
-    $sql = 'SELECT id, nom, emoticone from humeur';
+    $sql = 'SELECT id, nom, emoticone, class_color from humeur';
     $sth = $pdo->prepare($sql);
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);

@@ -579,6 +579,43 @@ font-size: 12px;
 line-height: 1.428571429;
 }
 
+/* ---------------------------------
+      *LEGEND*
+------------------------------------ */
+.color-choice-red{
+  height: 40px;
+  border-radius: 15px;
+  background-color: red;
+}
+
+.color-choice-orange {
+  height: 40px;
+  border-radius: 15px;
+  background-color: orangered;
+}
+
+.color-choice-yellow {
+  height: 40px;
+  border-radius: 15px;
+  background-color: yellow;
+}
+
+.marge-right {
+  margin-right: 15px;
+}
+
+.row-legend {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.text-legend {
+  color: white;
+  font-weight: bold;
+}
+
+
 /*----------------------------------------------
     MEDIA QUERIES     
 ------------------------------------------------*/
@@ -654,3 +691,108 @@ font-size: 19px;
   color: white;
   font-weight: bold;
 }
+
+
+/* -----------------------------------------------------------------------------------------------------------
+                     *MEDIA QUERY*
+--------------------------------------------------------------------------------------------------------------- */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .bg-graphics {
+  
+    padding-bottom: 20px;
+    border-radius: 10px;
+  }
+
+}
+
+
+@media(min-width:768px) and (max-width: 991.98px){
+  #page-wrapper{
+      margin: 0 0 0 260px;
+      padding: 15px 30px;
+      min-height: 1200px;
+		
+    }
+	
+	
+    .navbar-side {
+      width: 260px;
+      z-index: 1;
+    }
+
+   .navbar {
+   border-radius: 0px; 
+}
+
+.bg-graphics {
+
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+   
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .bg-graphics {
+    background-color: rgb(56, 54, 54);
+    padding-bottom: 20px;
+    margin-right: 1px;
+    border-radius: 10px;
+  }
+
+  #page-inner {
+    width:100%;
+    margin:56px 20px 10px 0px;
+    background-color:transparent;
+    padding:10px;
+    min-height:1200px;
+  }
+}
+
+@media(max-width:576px) {
+  .page-header small {
+  display: block;
+  padding-top: 14px;
+  font-size: 19px;
+  }
+
+  .panel-left {
+    width: 85px;
+    height: 85px; 
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 14px;
+  }
+  
+  #page-inner {
+    width:100%;
+    margin:56px 20px 10px 0px;
+    background-color:transparent;
+    padding:10px;
+    min-height:1200px;
+  }
+  
+  .padding-sm-emoji {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  
+  .bg-graphics {
+    background-color: rgb(56, 54, 54);
+    padding-bottom: 20px;
+    margin-right: 1px;
+    border-radius: 10px;
+  }
+  
+  .row-legend {
+    display: flex;
+    justify-content: space-between;
+    max-width: 339px;
+  
+  }
+  
+  }
+
+
+
