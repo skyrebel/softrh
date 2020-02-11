@@ -51,9 +51,7 @@ function hasvotedAction()
     }
 
     $loader = new \Twig\Loader\FilesystemLoader('view');
-    $twig = new \Twig\Environment($loader, [
-        'cache' => false,
-    ]);
+    $twig = new \Twig\Environment($loader, ['cache' => false]);
     $template = $twig->load('validation-vote.html.twig');
     echo $template->render();
 }
