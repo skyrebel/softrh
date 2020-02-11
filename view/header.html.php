@@ -10,7 +10,7 @@
 <body>
  <div class="container">
       <div class="row">
-      <div class="col-3">Mon logo</div>
-      <div class="col-9">Mon Menu</div>
+      <!-- <div class="col-3">Mon logo</div>
+      <div class="col-9">Mon Menu</div> -->
       </div>
  </div> 

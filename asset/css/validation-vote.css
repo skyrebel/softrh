@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap');
+
+body{
+    background: linear-gradient(#FF6C00, #FF3C00);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.style-text-merci {
+    color: white;
+    font-size: 50px;
+
+}
+
+.style-text-compte {
+    font-size: 30px;
+}
+
+.style-text-error{
+    font-size: 30px;
+  
+}
+
+
+.bg-merci {
+    background-color: orangered;
+    padding-bottom: 20px;
+    box-shadow: 5px 5px 5px rgba(255, 0, 0, 0.596);
+}
+
+.btn{
+    border: solid 1px white;
+    color:white;
+    background: linear-gradient(#FF6C00, #FF3C00);
+}
