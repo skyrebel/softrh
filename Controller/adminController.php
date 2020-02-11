@@ -18,7 +18,6 @@ return;
 $lastDayOfMonth = lastDayCurrentMonth();
 $listHumeur = getHumeursAll();
 $votesCurrentWeek = [];
-$votesCurrentMonth = getAllVotesCurrentMonth();
 $role = $_SESSION['user']['role'];
 $listOfDayMonth = [];
 
@@ -46,7 +45,6 @@ $votesCurrentWeek[$i]['a']= intval($a["count"]);
 $votesCurrentWeek[$i]['b']= intval($b["count"]);
 $votesCurrentWeek[$i]['c']= intval($c["count"]);
 }
-echo json_encode($votesCurrentWeek);
 
 $loader = new \Twig\Loader\FilesystemLoader('view');
 $twig = new \Twig\Environment($loader, [
@@ -56,8 +54,7 @@ $services = getservicesAll();
 $template = $twig->load('admin.html.twig');
 echo $template->render([
 'listHumeur' => $listHumeur,
-'votesCurrentDay' => $votesCurrentWeek,
-'votesCurrentMonth' => $votesCurrentMonth,
+'votesCurrentWeek' => json_encode($votesCurrentWeek),
 'role' => $role,
 'listOfDayMonth' => $listOfDayMonth
 
