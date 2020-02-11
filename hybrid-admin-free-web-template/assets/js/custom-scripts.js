@@ -26,7 +26,7 @@
             Morris.Bar({
                 element: 'morris-bar-chart',
                 data: [{
-                    y: 'lundi',
+                    y: 'jeudi',
                     a: 50,
                     b: 60 ,
                     c: 15                
@@ -69,13 +69,13 @@
             Morris.Line({
                 element: 'morris-line-chart',
                 data: [
-					  { y: '2012', a: 50, b: 90, c:40},
+					  { y: '2003', a: 50, b: 90, c:40},
 					  { y: '2015', a: 165,  b: 185, c: 85},
 					  { y: '2016', a: 150,  b: 130, c:65},
 					  { y: '2017', a: 175,  b: 160, c:145},
 					  { y: '2018', a: 80,  b: 65, c: 189},
 					  { y: '2019', a: 90,  b: 70, c:147}, 
-					  { y: '2020', a: 100, b: 125, c:125},
+					  { y: '2000', a: 100, b: 125, c:125},
 					  { y: '2021', a: 155, b: 175, c:35},
 					  { y: '2022', a: 80, b: 85, c: 165},
 					  { y: '2023', a: 145, b: 155, c:85},
@@ -97,9 +97,9 @@
             });
            
         
-            $('.bar-chart').cssCharts({type:"bar"});
+            $('#morris-bar-chart').cssCharts({type:"bar"});
             // $('.donut-chart').cssCharts({type:"donut"}).trigger('show-donut-chart');
-            $('.line-chart').cssCharts({type:"line"});
+            $('#morris-line-chart').cssCharts({type:"line"});
 
             // $('.pie-thychart').cssCharts({type:"pie"});
        

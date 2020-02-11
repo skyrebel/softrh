@@ -50,12 +50,10 @@ header('Location: /');
 return;
 }
 
-$loader = new \Twig\Loader\FilesystemLoader('view');
-$twig = new \Twig\Environment($loader, [
-'cache' => false,
-]);
-$template = $twig->load('validation-vote.html.twig');
-echo $template->render();
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+    $twig = new \Twig\Environment($loader, ['cache' => false]);
+    $template = $twig->load('validation-vote.html.twig');
+    echo $template->render();
 }
 
 
