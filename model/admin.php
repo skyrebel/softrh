@@ -1,5 +1,4 @@
 <?php
-
 function getadminsAll()
 {
     global $pdo;
@@ -27,7 +26,7 @@ function getHumeursAll()
     return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getAllVotesCurrentDay( )
+function getAllVotesCurrentDay()
 {
     global $pdo;
     $sql = "select h.nom, count( if( v.date_vote = concat(year(CURRENT_DATE),'-', month(CURRENT_DATE),'-', day(CURRENT_DATE))   , 1 , null)) as count from humeur h left outer join vote v on v.id_humeur = h.id group by h.nom";
@@ -48,7 +47,7 @@ function getAllVotesCurrentWeek($idhumeur, $numberDay )
     return $sth->fetch(PDO::FETCH_ASSOC);
 }
 
-function getAllVotesCurrentMonth()
+function getAllVotesCurrentMonth)
 {
     global $pdo;
     $sql = "select h.nom, v.date_vote , count( if( concat(year(v.date_vote),'-', month(v.date_vote)) = concat(year(CURRENT_DATE),'-', month(CURRENT_DATE))   , 1 , null)) as count from humeur h left outer join vote v on v.id_humeur = h.id group by h.nom, v.date_vote";
@@ -67,4 +66,3 @@ function lastDayCurrentMonth()
     $sth->execute();
     return $sth->fetch(PDO::FETCH_ASSOC);
 }
-
