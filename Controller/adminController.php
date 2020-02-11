@@ -17,7 +17,7 @@ function defaultAction()
     
     $lastDayOfMonth = lastDayCurrentMonth();
     $listHumeur = getHumeursAll();
-    $votesCurrentDay = getAllVotesCurrentDay();
+    $votesCurrentWeek = [];
     $votesCurrentMonth = getAllVotesCurrentMonth();
     $role = $_SESSION['user']['role'];
     $listOfDayMonth = [];
@@ -31,8 +31,22 @@ function defaultAction()
         $listOfDayMonth[] = $i;
     }
 
+    $day = array(
+        "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"
+    );
     
-    
+
+    for( $i = 0; $i < 5; $i++ ){
+       $votesCurrentWeek[$i]['y']= $day [$i];
+       $a = getAllVotesCurrentWeek($listHumeur[0]["id"], $i );
+       $b = getAllVotesCurrentWeek($listHumeur[1]["id"], $i );
+       $c = getAllVotesCurrentWeek($listHumeur[2]["id"], $i );
+      
+       $votesCurrentWeek[$i]['a']= intval($a["count"]);
+       $votesCurrentWeek[$i]['b']= intval($b["count"]);
+       $votesCurrentWeek[$i]['c']= intval($c["count"]);
+    }
+    echo json_encode($votesCurrentWeek);
 
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
@@ -42,7 +56,7 @@ function defaultAction()
     $template = $twig->load('admin.html.twig');
     echo $template->render([
         'listHumeur' => $listHumeur,
-        'votesCurrentDay' => $votesCurrentDay,
+        'votesCurrentDay' => $votesCurrentWeek,
         'votesCurrentMonth' => $votesCurrentMonth,
         'role' => $role,
         'listOfDayMonth' => $listOfDayMonth
