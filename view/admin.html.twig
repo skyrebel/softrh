@@ -117,14 +117,14 @@
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
-                      <li>
+                        <li>
                             <a href="/admin" class="active-menu"><i class="fa fa-bar-chart-o"></i>Tout les services</a>
                         </li>
-                    {% for service in services %}
-                         <li>
-                            <a href="/admin/service/{{ service.id }}" class="active-menu"><i class="fa fa-bar-chart-o"></i> {{ service.nom}}</a>
-                        </li>
-                    {% endfor %}
+                        {% for service in services %}
+                            <li>
+                                <a href="/admin/service/{{ service.id }}" class="active-menu"><i class="fa fa-bar-chart-o"></i> {{ service.nom }}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
             </div>
         </nav>
@@ -148,7 +148,7 @@
                         </div>
                     {% endfor %}   
                 </div>
-                <div class="row bg-graphics">
+                <div class="row ">
                     <div class="col-xs-12 col-sm-12 col-md-12 bg-graphics margin-chart">
                         <div class="">
                             <div class="panel-heading">
@@ -160,7 +160,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-12 bg-graphics">
+                    <div class="col-xs-12 col-sm-12 col-md-12 bg-graphics margin-chart">
                         <div class="">
                             <div class="panel-heading">
                                 Humeur: Mois
