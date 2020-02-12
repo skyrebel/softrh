@@ -37,6 +37,17 @@ function getAllVotesCurrentWeek($idhumeur, $numberDay )
     return $sth->fetch(PDO::FETCH_ASSOC);
 }
 
+function getAllVotesCurrentMonth($idhumeur, $numberDay )
+{ 
+    global $pdo;
+    $sql = "select count(date_vote)as count from vote where week(date_vote) = week(CURRENT_DATE) and id_humeur = :idhumeur  and day(date_vote) = :numberDay ";
+    $sth = $pdo->prepare($sql);
+    $sth->bindParam(':numberDay', $numberDay, PDO::PARAM_INT);  
+    $sth->bindParam(':idhumeur',intval($idhumeur), PDO::PARAM_INT);    
+    $sth->execute();
+    return $sth->fetch(PDO::FETCH_ASSOC);
+}
+
 
 
 function lastDayCurrentMonth()
