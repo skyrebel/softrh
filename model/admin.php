@@ -1,6 +1,7 @@
 <?php
 
 function getadminsAll()
+
 {
     global $pdo;
     $sql = 'SELECT id, nom, password, role from Utilisateur';
@@ -10,6 +11,7 @@ function getadminsAll()
 }
 
 function getservicesAll()
+
 {
     global $pdo;
     $sql = 'SELECT id, nom from service';
@@ -18,42 +20,34 @@ function getservicesAll()
     return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getHumeursAll()
+function voteHumeurDay()
+
+{
+    $date = 2020-02-09;
+    global $pdo;
+    $sql = 'SELECT h.nom, count(if (v.date_vote=:date and id_serviceservice=1 , 1 , null)) as count from humeur h left outer JOIN vote v on v.id_humeur = h.id group by h.nom';
+    $sth = $pdo->prepare($sql);
+    $sth->bindParam(':date', $date, PDO::PARAM_STR);
+    $sth->execute();
+    return $sth->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function voteHumeurMonth()
+
 {
     global $pdo;
-    $sql = 'SELECT id, nom, emoticone, class_color from humeur';
+    $sql = 'SELECT id, h.nom, count(if (date=:date and service=1 , 1 , null)) as count from humeur h left outer JOIN vote v on v.id_humeur = h.id group by h.nom';
     $sth = $pdo->prepare($sql);
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getAllVotesCurrentDay( )
+function listday()
+
 {
     global $pdo;
-    $sql = "select h.nom, count( if( v.date_vote = concat(year(CURRENT_DATE),'-', month(CURRENT_DATE),'-', day(CURRENT_DATE))   , 1 , null)) as count from humeur h left outer join vote v on v.id_humeur = h.id group by h.nom";
+    $sql = 'SELECT id, nom from Service';
     $sth = $pdo->prepare($sql);
-    $sth->bindParam(':id_service', $idService, PDO::PARAM_INT);    
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
-
-function getAllVotesCurrentMonth()
-{
-    global $pdo;
-    $sql = "select h.nom, v.date_vote , count( if( concat(year(v.date_vote),'-', month(v.date_vote)) = concat(year(CURRENT_DATE),'-', month(CURRENT_DATE))   , 1 , null)) as count from humeur h left outer join vote v on v.id_humeur = h.id group by h.nom, v.date_vote";
-    $sth = $pdo->prepare($sql);
-    $sth->bindParam(':id_service', $idService, PDO::PARAM_INT);  
-    $sth->execute();
-    return $sth->fetchAll(PDO::FETCH_ASSOC);
-}
-
-
-function lastDayCurrentMonth()
-{
-    global $pdo;
-    $sql = 'select day(last_day(CURRENT_DATE)) as month';
-    $sth = $pdo->prepare($sql);
-    $sth->execute();
-    return $sth->fetch(PDO::FETCH_ASSOC);
-}
-
