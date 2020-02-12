@@ -51,7 +51,7 @@ function defaultAction()
             $numberDay='0'.$i;
         }
         else{
-            $numberDay=$i;
+            $numberDay=strval($i);
         }
 
         
@@ -71,10 +71,12 @@ function defaultAction()
     ]);
     $services = getservicesAll();
     $template = $twig->load('admin.html.twig');
+    // var_dump($votesCurrentWeek);
     echo $template->render([
         'listHumeur' => $listHumeur,
         'votesCurrentweek' => json_encode($votesCurrentWeek),
         'votesCurrentmonth'=> json_encode($votesCurrentMonth),
+        'services' => $services,
         'role' => $role,
         'listOfDayMonth' => $listOfDayMonth
 
