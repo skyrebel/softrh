@@ -64,7 +64,7 @@ function defaultAction()
         $votesCurrentMonth[$i-1]['b']= intval($b["count"]);
         $votesCurrentMonth[$i-1]['c']= intval($c["count"]);
       }
-var_dump( $votesCurrentMonth);
+
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
@@ -79,30 +79,15 @@ var_dump( $votesCurrentMonth);
         'listOfDayMonth' => $listOfDayMonth
 
 
-    ]);
-
-
-    
-   
-  
-    
-    
-    
+    ]); 
  
 }
-
-
-
-
-
-
 
 $action = 'default';
 
 if (strpos($uri, '/', 1) !== false) {
 $action = (strpos($uri, '/', strlen($controller) + 1) === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri, strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
 }
-
 
 switch ($action) {
 
