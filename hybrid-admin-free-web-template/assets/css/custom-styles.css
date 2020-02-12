@@ -692,6 +692,11 @@ font-size: 19px;
   font-weight: bold;
 }
 
+.margin-chart {
+  margin-bottom: 50px;
+  border-radius: 15px;
+}
+
 
 /* -----------------------------------------------------------------------------------------------------------
                      *MEDIA QUERY*
@@ -703,7 +708,7 @@ font-size: 19px;
     padding-bottom: 20px;
     border-radius: 10px;
   }
-
+  
 }
 
 
