@@ -25,34 +25,7 @@
 			-----------------------------------------*/
             Morris.Bar({
                 element: 'morris-bar-chart',
-                data: [{
-                    y: 'jeudi',
-                    a: 50,
-                    b: 60 ,
-                    c: 15                
-                }, {
-                    y: 'mardi',
-                    a: 75,
-                    b: 65,
-                    c: 25
-                }, {
-                    y: 'mercredi',
-                    a: 50,
-                    b: 40,
-                    c: 60
-                }, {
-                    y: 'jeudi',
-                    a: 75,
-                    b: 65,
-                    c: 80
-                }, {
-                    y: 'vendredi',
-                    a: 50,
-                    b: 40,
-                    c: 75
-                }, 
-                
-                ],
+                data: dataBar,
                 xkey: 'y',
                 ykeys: ['a', 'b', 'c'],
                 labels: ['Series A', 'Series B', 'Series C'],

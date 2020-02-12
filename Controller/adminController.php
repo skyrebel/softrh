@@ -17,9 +17,7 @@ function defaultAction()
     
     $lastDayOfMonth = lastDayCurrentMonth();
     $listHumeur = getHumeursAll();
-    $votesCurrentDay = getAllVotesCurrentDay();
-    $votesCurrentMonth = getAllVotesCurrentMonth();
-    $services = getservicesAll();
+    $votesCurrentWeek = [];
     $role = $_SESSION['user']['role'];
     $listOfDayMonth = [];
     
@@ -32,25 +30,65 @@ function defaultAction()
         $listOfDayMonth[] = $i;
     }
 
+    $day = array(
+        "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"
+    );
     
-    
+
+    for( $i = 0; $i < 5; $i++ ){
+       $votesCurrentWeek[$i]['y']= $day [$i];
+       $a = getAllVotesCurrentWeek($listHumeur[0]["id"], $i );
+       $b = getAllVotesCurrentWeek($listHumeur[1]["id"], $i );
+       $c = getAllVotesCurrentWeek($listHumeur[2]["id"], $i );
+      
+       $votesCurrentWeek[$i]['a']= intval($a["count"]);
+       $votesCurrentWeek[$i]['b']= intval($b["count"]);
+       $votesCurrentWeek[$i]['c']= intval($c["count"]);
+    }
+    $votesCurrentMonth=[];
+    for( $i = 1; $i <= $lastDayOfMonth["month"]; $i++ ){
+        if ($i< 10 ){
+            $numberDay='0'.$i;
+        }
+        else{
+            $numberDay=$i;
+        }
+
+        
+        $votesCurrentMonth[$i-1]['y']= $numberDay;
+        $a = getAllVotesCurrentMonth($listHumeur[0]["id"], $i );
+        $b = getAllVotesCurrentMonth($listHumeur[1]["id"], $i );
+        $c = getAllVotesCurrentMonth($listHumeur[2]["id"], $i );
+       
+        $votesCurrentMonth[$i-1]['a']= intval($a["count"]);
+        $votesCurrentMonth[$i-1]['b']= intval($b["count"]);
+        $votesCurrentMonth[$i-1]['c']= intval($c["count"]);
+      }
 
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
     ]);
-
+    $services = getservicesAll();
     $template = $twig->load('admin.html.twig');
     echo $template->render([
         'listHumeur' => $listHumeur,
-        'votesCurrentDay' => $votesCurrentDay,
-        'votesCurrentMonth' => $votesCurrentMonth,
+        'votesCurrentweek' => json_encode($votesCurrentWeek),
+        'votesCurrentmonth'=> json_encode($votesCurrentMonth),
         'role' => $role,
-        'listOfDayMonth' => $listOfDayMonth,
-        'services' => $services
+        'listOfDayMonth' => $listOfDayMonth
 
 
     ]);
+
+
+    
+   
+  
+    
+    
+    
+ 
 }
 
 
@@ -62,17 +100,17 @@ function defaultAction()
 $action = 'default';
 
 if (strpos($uri, '/', 1) !== false) {
-    $action = (strpos($uri, '/', strlen($controller) + 1)  === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri,  strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
+$action = (strpos($uri, '/', strlen($controller) + 1) === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri, strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
 }
 
 
 switch ($action) {
 
-    case  'default':
-    case  "":
-        defaultAction();
-        break;
-    
-    default:
-        require_once 'view/404.html.twig';
+case 'default':
+case "":
+defaultAction();
+break;
+
+default:
+require_once 'view/404.html.twig';
 }

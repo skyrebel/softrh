@@ -1,5 +1,4 @@
 <?php
-
 function getadminsAll()
 {
     global $pdo;
@@ -27,25 +26,28 @@ function getHumeursAll()
     return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getAllVotesCurrentDay( )
-{
+function getAllVotesCurrentWeek($idhumeur, $numberDay )
+{ 
     global $pdo;
-    $sql = "select h.nom, count( if( v.date_vote = concat(year(CURRENT_DATE),'-', month(CURRENT_DATE),'-', day(CURRENT_DATE))   , 1 , null)) as count from humeur h left outer join vote v on v.id_humeur = h.id group by h.nom";
+    $sql = "select count(date_vote)as count from vote where week(date_vote) = week(CURRENT_DATE) and id_humeur = :idhumeur  and weekday(date_vote) = :numberDay ";
     $sth = $pdo->prepare($sql);
-    $sth->bindParam(':id_service', $idService, PDO::PARAM_INT);    
+    $sth->bindParam(':numberDay', $numberDay, PDO::PARAM_INT);  
+    $sth->bindParam(':idhumeur',intval($idhumeur), PDO::PARAM_INT);    
     $sth->execute();
-    return $sth->fetchAll(PDO::FETCH_ASSOC);
+    return $sth->fetch(PDO::FETCH_ASSOC);
 }
 
-function getAllVotesCurrentMonth()
-{
+function getAllVotesCurrentMonth($idhumeur, $numberDay )
+{ 
     global $pdo;
-    $sql = "select h.nom, v.date_vote , count( if( concat(year(v.date_vote),'-', month(v.date_vote)) = concat(year(CURRENT_DATE),'-', month(CURRENT_DATE))   , 1 , null)) as count from humeur h left outer join vote v on v.id_humeur = h.id group by h.nom, v.date_vote";
+    $sql = "select count(date_vote)as count from vote where week(date_vote) = week(CURRENT_DATE) and id_humeur = :idhumeur  and day(date_vote) = :numberDay ";
     $sth = $pdo->prepare($sql);
-    $sth->bindParam(':id_service', $idService, PDO::PARAM_INT);  
+    $sth->bindParam(':numberDay', $numberDay, PDO::PARAM_INT);  
+    $sth->bindParam(':idhumeur',intval($idhumeur), PDO::PARAM_INT);    
     $sth->execute();
-    return $sth->fetchAll(PDO::FETCH_ASSOC);
+    return $sth->fetch(PDO::FETCH_ASSOC);
 }
+
 
 
 function lastDayCurrentMonth()
@@ -56,4 +58,3 @@ function lastDayCurrentMonth()
     $sth->execute();
     return $sth->fetch(PDO::FETCH_ASSOC);
 }
-
