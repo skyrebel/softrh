@@ -1,5 +1,4 @@
 <?php
-
 function getadminsAll()
 {
     global $pdo;
@@ -21,7 +20,7 @@ function getservicesAll()
 function getHumeursAll()
 {
     global $pdo;
-    $sql = 'SELECT id, nom, emoticone from humeur';
+    $sql = 'SELECT id, nom, emoticone, class_color from humeur';
     $sth = $pdo->prepare($sql);
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -38,6 +37,8 @@ function getAllVotesCurrentWeek($idhumeur, $numberDay )
     return $sth->fetch(PDO::FETCH_ASSOC);
 }
 
+
+
 function lastDayCurrentMonth()
 {
     global $pdo;
@@ -46,4 +47,3 @@ function lastDayCurrentMonth()
     $sth->execute();
     return $sth->fetch(PDO::FETCH_ASSOC);
 }
-

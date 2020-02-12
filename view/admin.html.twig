@@ -1,24 +1,195 @@
-<?php
-    require_once 'view/header.html.php'
-?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <?php
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Admin Template : HYBRID</title>
+    <!-- Bootstrap Styles-->
+    <link href="/hybrid-admin-free-web-template/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="/hybrid-admin-free-web-template/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="/hybrid-admin-free-web-template/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="/hybrid-admin-free-web-template/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
-                    foreach( $admin as $admins) {
-                        ?>
-                          <div>
-                              <p><strong>Nom : </strong><?php echo $admin['Nom']; ?></p>
-                              <p><strong>Mot de passe : </strong><?php echo $admin['mot de passe']; ?></p>
-                          </div>
-                        <?php
-                    }
-                ?>
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=""><img src="../media/logo-dash.png" class="fa fa-gear"></a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <!-- <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li> -->
+                        <li class="divider"></li>
+                        <!-- <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 min</span>
+                                </div>
+                            </a>
+                        </li> -->
+                        <li class="divider"></li>
+                        <!-- <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li> -->
+                        <li class="divider"></li>
+                        <li>
+                            <!-- <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li> -->
+                        <li class="divider"></li>
+                        <li>
+                            <!-- <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li> -->
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/login/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+                      <li>
+                            <a href="/admin" class="active-menu"><i class="fa fa-bar-chart-o"></i>Tout les services</a>
+                        </li>
+                    {% for service in services %}
+                         <li>
+                            <a href="/admin/service/{{ service.id }}" class="active-menu"><i class="fa fa-bar-chart-o"></i> {{ service.nom}}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <!-- /. ROW  -->
+                <div class="row row-legend ">
+                    {% for humeur in listHumeur %}
+                        <div class="col-lg-3 padding-sm-emoji">
+                            <div class="row bg-graphics marge-right ">
+                                <div class="col-lg-6 padding-sm-emoji">
+                                    <p><img href="#" class="img-fluid " src="{{ humeur.emoticone }}" alt="image" width="90"
+                                    ></p>
+                                </div>
+                                <div class="col-lg-6 padding-sm-emoji">
+                                    <p class="text-legend">{{humeur.nom |convert_encoding('UTF-8', 'iso-8859-1')}}</p>
+                                    <div class="{{ humeur.class_color}}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}   
+                </div>
+                <div class="row bg-graphics">
+                    <div class="col-xs-12 col-sm-12 col-md-12 bg-graphics margin-chart">
+                        <div class="">
+                            <div class="panel-heading">
+                                Humeur: Jour
+                            </div>
+                            <div class="">
+                                <div id="morris-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 bg-graphics">
+                        <div class="">
+                            <div class="panel-heading">
+                                Humeur: Mois
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-line-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/hybrid-admin-free-web-template/assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/hybrid-admin-free-web-template/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/hybrid-admin-free-web-template/assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="/hybrid-admin-free-web-template/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/hybrid-admin-free-web-template/assets/js/morris/morris.js"></script>
+    <!-- Custom Js -->
+    <script src="/hybrid-admin-free-web-template/assets/js/custom-scripts.js"></script>
+    <script src="/hybrid-admin-free-web-template/assets/js/custom.js"></script>
 
-<?php
-    require_once 'view/footer.html.php';
+
+
+</body>
+
+</html>

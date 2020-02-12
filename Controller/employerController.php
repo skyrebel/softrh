@@ -44,11 +44,11 @@ function defaultAction()
 
 function hasvotedAction()
 {
-    session_start();
-    if (!isset($_SESSION['user'])) {
-        header('Location: /');
-        return;
-    }
+session_start();
+if (!isset($_SESSION['user'])) {
+header('Location: /');
+return;
+}
 
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, ['cache' => false]);

@@ -33,7 +33,7 @@ function defaultAction()
     $day = array(
         "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"
     );
-    
+    var_dump($listHumeur);
 
     for( $i = 0; $i < 5; $i++ ){
        $votesCurrentWeek[$i]['y']= $day [$i];
@@ -45,7 +45,10 @@ function defaultAction()
        $votesCurrentWeek[$i]['b']= intval($b["count"]);
        $votesCurrentWeek[$i]['c']= intval($c["count"]);
     }
-    echo json_encode($votesCurrentWeek);
+    
+    for( $i = 0; $i < $lastDayOfMonth["month"]; $i++ ){
+        echo 'coucou';
+      }
 
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
@@ -55,13 +58,22 @@ function defaultAction()
     $template = $twig->load('admin.html.twig');
     echo $template->render([
         'listHumeur' => $listHumeur,
-        'votesCurrentweek' => $votesCurrentWeek,
+        'votesCurrentweek' => json_encode($votesCurrentWeek),
     
         'role' => $role,
         'listOfDayMonth' => $listOfDayMonth
 
 
     ]);
+
+
+    
+   
+  
+    
+    
+    
+ 
 }
 
 
@@ -73,17 +85,17 @@ function defaultAction()
 $action = 'default';
 
 if (strpos($uri, '/', 1) !== false) {
-    $action = (strpos($uri, '/', strlen($controller) + 1)  === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri,  strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
+$action = (strpos($uri, '/', strlen($controller) + 1) === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri, strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
 }
 
 
 switch ($action) {
 
-    case  'default':
-    case  "":
-        defaultAction();
-        break;
-    
-    default:
-        require_once 'view/404.html.twig';
+case 'default':
+case "":
+defaultAction();
+break;
+
+default:
+require_once 'view/404.html.twig';
 }
