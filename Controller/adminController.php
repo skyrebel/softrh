@@ -33,7 +33,7 @@ function defaultAction()
     $day = array(
         "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"
     );
-    var_dump($listHumeur);
+    
 
     for( $i = 0; $i < 5; $i++ ){
        $votesCurrentWeek[$i]['y']= $day [$i];
@@ -45,11 +45,26 @@ function defaultAction()
        $votesCurrentWeek[$i]['b']= intval($b["count"]);
        $votesCurrentWeek[$i]['c']= intval($c["count"]);
     }
-    
-    for( $i = 0; $i < $lastDayOfMonth["month"]; $i++ ){
-        echo 'coucou';
-      }
+    $votesCurrentMonth=[];
+    for( $i = 1; $i <= $lastDayOfMonth["month"]; $i++ ){
+        if ($i< 10 ){
+            $numberDay='0'.$i;
+        }
+        else{
+            $numberDay=$i;
+        }
 
+        
+        $votesCurrentMonth[$i-1]['y']= $numberDay;
+        $a = getAllVotesCurrentMonth($listHumeur[0]["id"], $i );
+        $b = getAllVotesCurrentMonth($listHumeur[1]["id"], $i );
+        $c = getAllVotesCurrentMonth($listHumeur[2]["id"], $i );
+       
+        $votesCurrentMonth[$i-1]['a']= intval($a["count"]);
+        $votesCurrentMonth[$i-1]['b']= intval($b["count"]);
+        $votesCurrentMonth[$i-1]['c']= intval($c["count"]);
+      }
+var_dump( $votesCurrentMonth);
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
@@ -59,7 +74,7 @@ function defaultAction()
     echo $template->render([
         'listHumeur' => $listHumeur,
         'votesCurrentweek' => json_encode($votesCurrentWeek),
-    
+        'votesCurrentmonth'=> json_encode($votesCurrentMonth),
         'role' => $role,
         'listOfDayMonth' => $listOfDayMonth
 

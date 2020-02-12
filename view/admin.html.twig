@@ -21,6 +21,7 @@
 
 
 <body>
+
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -117,14 +118,14 @@
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
-                      <li>
+                        <li>
                             <a href="/admin" class="active-menu"><i class="fa fa-bar-chart-o"></i>Tout les services</a>
                         </li>
-                    {% for service in services %}
-                         <li>
-                            <a href="/admin/service/{{ service.id }}" class="active-menu"><i class="fa fa-bar-chart-o"></i> {{ service.nom}}</a>
-                        </li>
-                    {% endfor %}
+                        {% for service in services %}
+                            <li>
+                                <a href="/admin/service/{{ service.id }}" class="active-menu"><i class="fa fa-bar-chart-o"></i> {{ service.nom }}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
             </div>
         </nav>
@@ -148,7 +149,7 @@
                         </div>
                     {% endfor %}   
                 </div>
-                <div class="row bg-graphics">
+                <div class="row ">
                     <div class="col-xs-12 col-sm-12 col-md-12 bg-graphics margin-chart">
                         <div class="">
                             <div class="panel-heading">
@@ -160,7 +161,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-12 bg-graphics">
+                    <div class="col-xs-12 col-sm-12 col-md-12 bg-graphics margin-chart">
                         <div class="">
                             <div class="panel-heading">
                                 Humeur: Mois
@@ -174,6 +175,11 @@
             </div>
         </div>
     </div>
+        <script>
+        dataBar = {{votesCurrentWeek|raw}}
+        console.log(dataBar);
+    
+    </script>
     <!-- JS Scripts-->
     <!-- jQuery Js -->
     <script src="/hybrid-admin-free-web-template/assets/js/jquery-1.10.2.js"></script>
@@ -186,7 +192,6 @@
     <script src="/hybrid-admin-free-web-template/assets/js/morris/morris.js"></script>
     <!-- Custom Js -->
     <script src="/hybrid-admin-free-web-template/assets/js/custom-scripts.js"></script>
-    <script src="/hybrid-admin-free-web-template/assets/js/custom.js"></script>
 
 
 
