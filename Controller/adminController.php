@@ -54,7 +54,8 @@ $services = getservicesAll();
 $template = $twig->load('admin.html.twig');
 echo $template->render([
 'listHumeur' => $listHumeur,
-'votesCurrentWeek' => json_encode($votesCurrentWeek),
+'votesCurrentWeek' => json_encode( $votesCurrentWeek),
+'services' => $services,
 'role' => $role,
 'listOfDayMonth' => $listOfDayMonth
 
