@@ -6,6 +6,7 @@ require_once 'vendor/autoload.php';
 
 function defaultAction()
 {
+   
     //Vérifier si la personne est connectée
     //Si c'est pa sle cas retour sur l'url de base home
     session_start();
@@ -70,12 +71,122 @@ function defaultAction()
         'cache' => false,
     ]);
     $services = getservicesAll();
+    
     $template = $twig->load('admin.html.twig');
     echo $template->render([
         'listHumeur' => $listHumeur,
         'votesCurrentweek' => json_encode($votesCurrentWeek),
         'votesCurrentmonth'=> json_encode($votesCurrentMonth),
         'role' => $role,
+        'services' => $services,
+        'listOfDayMonth' => $listOfDayMonth
+
+
+    ]);
+
+
+    
+   
+  
+    
+    
+    
+ 
+}
+
+
+
+function serviceAction()
+{
+   
+    //Vérifier si la personne est connectée
+    //Si c'est pa sle cas retour sur l'url de base home
+    session_start();
+    if (!isset($_SESSION['user'])) {
+        header('Location: /');
+        return;
+    }
+
+    global $uri;
+    $exprReg = "#\/[0-9]+#";
+    preg_match($exprReg, $uri, $matches);
+
+    if (count($matches) === 0) {
+        header('Location: /admin');
+        return;
+    }
+
+    $service_id = intval(substr($matches[0], 1));
+    //Vérifier si service existe, si c'est pas le cas 
+    //retour à l'admin
+    $serviceExist = getserviceById($service_id);
+    if( $serviceExist == false){
+        header('Location: /admin');
+        return;
+    }
+
+    $lastDayOfMonth = lastDayCurrentMonth();
+    $listHumeur = getHumeursAll();
+    $votesCurrentWeek = [];
+    $role = $_SESSION['user']['role'];
+    $listOfDayMonth = [];
+    
+    for( $i = 1; $i <= intval($lastDayOfMonth['month']); $i++ ){
+        if( $i < 10 ){
+            $listOfDayMonth[] = '0'.$i;
+            continue;
+        }
+
+        $listOfDayMonth[] = $i;
+    }
+
+    $day = array(
+        "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"
+    );
+    
+
+    for( $i = 0; $i < 5; $i++ ){
+       $votesCurrentWeek[$i]['y']= $day [$i];
+       $a = getAllVotesCurrentWeekByService($listHumeur[0]["id"], $i, $service_id );
+       $b = getAllVotesCurrentWeekByService($listHumeur[1]["id"], $i, $service_id );
+       $c = getAllVotesCurrentWeekByService($listHumeur[2]["id"], $i, $service_id );
+      
+       $votesCurrentWeek[$i]['a']= intval($a["count"]);
+       $votesCurrentWeek[$i]['b']= intval($b["count"]);
+       $votesCurrentWeek[$i]['c']= intval($c["count"]);
+    }
+    $votesCurrentMonth=[];
+    for( $i = 1; $i <= $lastDayOfMonth["month"]; $i++ ){
+        if ($i< 10 ){
+            $numberDay='0'.$i;
+        }
+        else{
+            $numberDay=$i;
+        }
+
+        
+        $votesCurrentMonth[$i-1]['y']= $numberDay;
+        $a = getAllVotesCurrentMonthByService($listHumeur[0]["id"], $i, $service_id );
+        $b = getAllVotesCurrentMonthByService($listHumeur[1]["id"], $i, $service_id );
+        $c = getAllVotesCurrentMonthByService($listHumeur[2]["id"], $i, $service_id );
+       
+        $votesCurrentMonth[$i-1]['a']= intval($a["count"]);
+        $votesCurrentMonth[$i-1]['b']= intval($b["count"]);
+        $votesCurrentMonth[$i-1]['c']= intval($c["count"]);
+      }
+
+    $loader = new \Twig\Loader\FilesystemLoader('view');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]);
+    $services = getservicesAll();
+    $template = $twig->load('admin.html.twig');
+    echo $template->render([
+        'listHumeur' => $listHumeur,
+        'votesCurrentweek' => json_encode($votesCurrentWeek),
+        'votesCurrentmonth'=> json_encode($votesCurrentMonth),
+        'role' => $role,
+        'services' => $services,
         'listOfDayMonth' => $listOfDayMonth
 
 
@@ -99,6 +210,7 @@ function defaultAction()
 
 $action = 'default';
 
+
 if (strpos($uri, '/', 1) !== false) {
 $action = (strpos($uri, '/', strlen($controller) + 1) === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri, strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
 }
@@ -108,9 +220,11 @@ switch ($action) {
 
 case 'default':
 case "":
-defaultAction();
-break;
-
+    defaultAction();
+    break;
+case 'service' :
+    serviceAction();
+    break;
 default:
 require_once 'view/404.html.twig';
 }
