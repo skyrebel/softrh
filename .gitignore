@@ -1,0 +1,5 @@
+/.Vagrant
+/adminer
+/*.log
+/Vagrantfile
+/ansible
