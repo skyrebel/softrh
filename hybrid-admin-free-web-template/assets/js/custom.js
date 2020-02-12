@@ -28,7 +28,7 @@
             Morris.Bar({
                 element: 'morris-bar-chart',
                 data: [{
-                    y: '01',
+                    y: 'jeudi',
                     a: 100,
                     b: 90
                 }, {
