@@ -44,18 +44,18 @@
                 data: dataLine,
             
 				 
-        xkey: 'y',
-        ykeys: ['a', 'b', 'c'],
-        labels: ['Total Income', 'Total Outcome'],
-        parseTime: false,
-        fillOpacity: 0.6,
-        hideHover: 'auto',
-        behaveLikeLine: true,
-        resize: true,
-        pointFillColors:['#ffffff'],
-        pointStrokeColors: ['black'],
-        lineColors:['red','orange','yellow']
-	 
+      xkey: 'y',
+      ykeys: ['a', 'b', 'c'],
+      parseTime: false,
+      labels: ['Total Income', 'Total Outcome'],
+      fillOpacity: 0.6,
+      hideHover: 'auto',
+      behaveLikeLine: true,
+      resize: true,
+      pointFillColors:['#ffffff'],
+      pointStrokeColors: ['black'],
+       lineColors:['red','orange','yellow']
+	  
             });
            
         
