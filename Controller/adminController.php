@@ -64,7 +64,7 @@ function defaultAction()
         $votesCurrentMonth[$i-1]['b']= intval($b["count"]);
         $votesCurrentMonth[$i-1]['c']= intval($c["count"]);
       }
-var_dump( $votesCurrentMonth);
+
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
