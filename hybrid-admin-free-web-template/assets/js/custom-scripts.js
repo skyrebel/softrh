@@ -28,8 +28,8 @@
                 data: dataBar,
                 xkey: 'y',
                 ykeys: ['a', 'b', 'c'],
-                labels: ['Series A', 'Series B', 'Series C'],
-				barColors: ['red','orange','yellow'],
+                labels: ['Heureux', 'Fatigué', 'Stressé'],
+				barColors: ['yellow','orange','red'],
                 hideHover: 'auto',
                 resize: true
             });
@@ -44,17 +44,18 @@
                 data: dataLine,
             
 				 
-        xkey: 'y',
-        ykeys: ['a', 'b', 'c'],
-        labels: ['Total Income', 'Total Outcome'],
-        parseTime: false,
-        fillOpacity: 0.6,
-        hideHover: 'auto',
-        behaveLikeLine: true,
-        resize: true,
-        pointFillColors:['#ffffff'],
-        pointStrokeColors: ['black'],
-        lineColors:['red','orange','yellow']
+      xkey: 'y',
+      ykeys: ['a', 'b', 'c'],
+      parseTime: false,
+      labels: ['Heureux','Fatigué','Stressé'],
+      fillOpacity: 0.6,
+      hideHover: 'auto',
+      behaveLikeLine: true,
+      resize: true,
+      pointFillColors:['#ffffff'],
+      pointStrokeColors: ['black'],
+       lineColors:['yellow','orange','red']
+	  
             });
            
         
