@@ -8,7 +8,7 @@ require_once 'vendor/autoload.php';
 
 function verifAction()
 {
-
+    global $subProject;
     // on teste la déclaration de nos variables
     if (!isset($_POST['email']) && !isset($_POST['password'])) {
 
@@ -24,7 +24,7 @@ function verifAction()
             'cache' => false,
         ]);
         $template = $twig->load('login.html.twig');
-        echo $template->render(['error' => true]);
+        echo $template->render(['error' => true, 'subProject' => $subProject]);
         return;
     }
 
@@ -36,12 +36,12 @@ function verifAction()
 
     if (strtolower($_SESSION['user']["role"]) == 'admin') {
 
-        header('Location: /admin');
+        header('Location: '.$subProject.'/admin');
 
         return;
     } else {      
 
-        header('Location: /employer');
+        header('Location: '.$subProject.'/employer');
 
         return;
     }
@@ -49,6 +49,7 @@ function verifAction()
 
 
 function logoutAction(){
+    global $subProject;
         // Démarrage ou restauration de la session
     session_start();
     // Réinitialisation du tableau de session
@@ -59,7 +60,7 @@ function logoutAction(){
     // Destruction du tableau de session
     unset($_SESSION);
 
-    header('Location: /');
+    header('Location: '.$subProject.'/');
 }
 
 $action = 'default';

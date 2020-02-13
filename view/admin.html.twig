@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bootstrap Admin Template : HYBRID</title>
     <!-- Bootstrap Styles-->
-    <link href="/hybrid-admin-free-web-template/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="{{ subProject }}/hybrid-admin-free-web-template/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="/hybrid-admin-free-web-template/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="{{ subProject }}/hybrid-admin-free-web-template/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <link href="/hybrid-admin-free-web-template/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="{{ subProject }}/hybrid-admin-free-web-template/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="/hybrid-admin-free-web-template/assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="{{ subProject }}/hybrid-admin-free-web-template/assets/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href=""><img src="/media/logo-dash.png" class=""></a>
+                <a class="navbar-brand" href=""><img src="{{ subProject }}/media/logo-dash.png" class=""></a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -108,7 +108,7 @@
                         {# <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a> #}
                         {# </li> #}
                         <li class="divider"></li>
-                        <li><a href="/login/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{ subProject }}/login/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -119,11 +119,11 @@
             <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                         <li>
-                            <a href="/admin" class="active-menu"><i class="fa fa-bar-chart-o"></i>Tout les services</a>
+                            <a href="{{ subProject }}/admin" class="active-menu"><i class="fa fa-bar-chart-o"></i>Tout les services</a>
                         </li>
                         {% for service in services %}
                             <li>
-                                <a href="/admin/service/{{ service.id }}" class="active-menu"><i class="fa fa-bar-chart-o"></i> {{ service.nom }}</a>
+                                <a href="{{ subProject }}/admin/service/{{ service.id }}" class="active-menu"><i class="fa fa-bar-chart-o"></i> {{ service.nom }}</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -138,11 +138,11 @@
                         <div class="col-lg-3 padding-sm-emoji">
                             <div class="row bg-graphics marge-right ">
                                 <div class="col-lg-6 padding-sm-emoji">
-                                    <p><img href="#" class="img-fluid " src="{{ humeur.emoticone }}" alt="image" width="90"
+                                    <p><img href="#" class="img-fluid " src="{{ subProject }}/{{ humeur.emoticone }}" alt="image" width="90"
                                     ></p>
                                 </div>
                                 <div class="col-lg-6 padding-sm-emoji">
-                                    <p class="text-legend">{{humeur.nom |convert_encoding('UTF-8', 'iso-8859-1')}}</p>
+                                    <p class="text-legend">{{humeur.nom |convert_encoding('UTF-8', 'UTF-8')}}</p>
                                     <div class="{{ humeur.class_color}}"></div>
                                 </div>
                             </div>
@@ -182,16 +182,16 @@
     </script>
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="/hybrid-admin-free-web-template/assets/js/jquery-1.10.2.js"></script>
+    <script src="{{ subProject }}/hybrid-admin-free-web-template/assets/js/jquery-1.10.2.js"></script>
     <!-- Bootstrap Js -->
-    <script src="/hybrid-admin-free-web-template/assets/js/bootstrap.min.js"></script>
+    <script src="{{ subProject }}/hybrid-admin-free-web-template/assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
-    <script src="/hybrid-admin-free-web-template/assets/js/jquery.metisMenu.js"></script>
+    <script src="{{ subProject }}/hybrid-admin-free-web-template/assets/js/jquery.metisMenu.js"></script>
     <!-- Morris Chart Js -->
-    <script src="/hybrid-admin-free-web-template/assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="/hybrid-admin-free-web-template/assets/js/morris/morris.js"></script>
+    <script src="{{ subProject }}/hybrid-admin-free-web-template/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="{{ subProject }}/hybrid-admin-free-web-template/assets/js/morris/morris.js"></script>
     <!-- Custom Js -->
-    <script src="/hybrid-admin-free-web-template/assets/js/custom-scripts.js"></script>
+    <script src="{{ subProject }}/hybrid-admin-free-web-template/assets/js/custom-scripts.js"></script>
 
 
 

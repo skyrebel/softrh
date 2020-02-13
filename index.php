@@ -1,6 +1,10 @@
 <?php
 
-   $uri = $_SERVER['REQUEST_URI'];
+$subProject = '/softrh';
+$uri = $_SERVER['REQUEST_URI'];
+// echo $uri;
+$uri = str_replace($subProject, '', $uri);
+// echo $uri;
 
    $controller = $uri;
 
