@@ -85,18 +85,7 @@ function defaultAction()
 
 
     ]);
-
-
-    
-   
-  
-    
-    
-    
- 
 }
-
-
 
 function serviceAction()
 {
@@ -193,9 +182,7 @@ function serviceAction()
 
 
     ]); 
- 
 }
-
 $action = 'default';
 
 
