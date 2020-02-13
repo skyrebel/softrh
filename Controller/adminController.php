@@ -6,12 +6,13 @@ require_once 'vendor/autoload.php';
 
 function defaultAction()
 {
+    global $subProject;
    
     //Vérifier si la personne est connectée
     //Si c'est pa sle cas retour sur l'url de base home
     session_start();
     if (!isset($_SESSION['user'])) {
-        header('Location: /');
+        header('Location: '.$subProject.'/');
         return;
     }
 
@@ -80,7 +81,8 @@ function defaultAction()
         'services' => $services,
         'role' => $role,
         'services' => $services,
-        'listOfDayMonth' => $listOfDayMonth
+        'listOfDayMonth' => $listOfDayMonth,
+        'subProject' => $subProject
 
 
     ]);
@@ -88,12 +90,13 @@ function defaultAction()
 
 function serviceAction()
 {
+    global $subProject;
    
     //Vérifier si la personne est connectée
     //Si c'est pa sle cas retour sur l'url de base home
     session_start();
     if (!isset($_SESSION['user'])) {
-        header('Location: /');
+        header('Location: '.$subProject.'/');
         return;
     }
 
@@ -102,7 +105,7 @@ function serviceAction()
     preg_match($exprReg, $uri, $matches);
 
     if (count($matches) === 0) {
-        header('Location: /admin');
+        header('Location: '.$subProject.'/admin');
         return;
     }
 
@@ -111,7 +114,7 @@ function serviceAction()
     //retour à l'admin
     $serviceExist = getserviceById($service_id);
     if( $serviceExist == false){
-        header('Location: /admin');
+        header('Location: '.$subProject.'/admin');
         return;
     }
 
@@ -177,7 +180,8 @@ function serviceAction()
         'votesCurrentmonth'=> json_encode($votesCurrentMonth),
         'role' => $role,
         'services' => $services,
-        'listOfDayMonth' => $listOfDayMonth
+        'listOfDayMonth' => $listOfDayMonth,
+        'subProject' => $subProject
 
 
     ]); 

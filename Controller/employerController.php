@@ -8,9 +8,10 @@ require_once 'vendor/autoload.php';
 
 function defaultAction()
 {
+    global $subProject;
     session_start();
     if (!isset($_SESSION['user'])) {
-        header('Location: /');
+        header('Location: '.$subProject.'/');
         return;
     }
 
@@ -24,7 +25,7 @@ function defaultAction()
         ]);
 
         $template = $twig->load('deja-vote.html.twig');
-        echo $template->render();
+        echo $template->render(['subProject' => $subProject]);
         return;
     }
 
@@ -35,7 +36,8 @@ function defaultAction()
     ]);
     $template = $twig->load('employer.html.twig');
     echo $template->render([
-        'humeurs' => $humeurs
+        'humeurs' => $humeurs,
+        'subProject' => $subProject
 
     ]);
 }
@@ -44,16 +46,17 @@ function defaultAction()
 
 function hasvotedAction()
 {
+    global $subProject;
 session_start();
 if (!isset($_SESSION['user'])) {
-header('Location: /');
+header('Location: '.$subProject.'/');
 return;
 }
 
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, ['cache' => false]);
     $template = $twig->load('validation-vote.html.twig');
-    echo $template->render();
+    echo $template->render(['subProject' => $subProject]);
 }
 
 
@@ -62,10 +65,11 @@ return;
 
 function voteAction()
 {
+    global $subProject;
     session_start();
 
     if (!isset($_SESSION['user'])) {
-        header('Location: /');
+        header('Location: '.$subProject.'/');
         return;
     }
 
@@ -81,8 +85,8 @@ function voteAction()
         ]);
         $template = $twig->load('employer.html.twig');
         echo $template->render([
-            'humeurs' => $humeurs
-
+            'humeurs' => $humeurs,
+            'subProject' => $subProject
         ]);
         return;
     }
@@ -101,7 +105,7 @@ function voteAction()
         ]);
 
         $template = $twig->load('deja-vote.html.twig');
-        echo $template->render();
+        echo $template->render(['subProject' => $subProject]);
         return;
     }
 
@@ -113,15 +117,16 @@ function voteAction()
 
     userHasVote($id_user, $date);
 
-    header('Location: /employer/has_vote');
+    header('Location: '.$subProject.'/employer/has_vote');
    
 }
 
 function validationVoteAction()
 {
+    global $subProject;
     session_start();
     if (!isset($_SESSION['user'])) {
-        header('Location: /');
+        header('Location: '.$subProject.'/');
         return;
     }
 
@@ -130,7 +135,7 @@ function validationVoteAction()
         'cache' => false,
     ]);
     $template = $twig->load('validation-vote.html.twig');
-    echo $template->render();
+    echo $template->render(['subProject' => $subProject]);
 }
 
 $action = 'default';

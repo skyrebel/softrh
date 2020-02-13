@@ -5,13 +5,13 @@ require_once 'vendor/autoload.php';
 function defaultAction(){
     
     
-
+    global $subProject;
     $loader = new \Twig\Loader\FilesystemLoader('view');
     $twig = new \Twig\Environment($loader, [
         'cache' => false,
     ]);
-    $template = $twig->load('login.html.twig');
-    echo $template->render();
+    // $template = $twig->load();
+    echo $twig->render('login.html.twig', ['subProject' => $subProject]);
 }
 
 
