@@ -134,13 +134,13 @@
                 <!-- /. ROW  -->
                 <div class="row row-legend ">
                     {% for humeur in listHumeur %}
-                        <div class="col-lg-3 padding-sm-emoji">
+                        <div class="col-xs-12 col-sm-12 padding-sm-emoji">
                             <div class="row bg-graphics marge-right ">
-                                <div class="col-lg-6 padding-sm-emoji">
+                                <div class="col-xs-12 col-sm-12 padding-sm-emoji">
                                     <p><img href="#" class="img-fluid " src="{{ humeur.emoticone }}" alt="image" width="90"
                                     ></p>
                                 </div>
-                                <div class="col-lg-6 padding-sm-emoji">
+                                <div class="col-lg-6 col-xs-12 col-sm-12 col-md-12 padding-sm-emoji">
                                     <p class="text-legend">{{humeur.nom |convert_encoding('UTF-8', 'iso-8859-1')}}</p>
                                     <div class="{{ humeur.class_color}}"></div>
                                 </div>

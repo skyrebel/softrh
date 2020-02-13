@@ -776,6 +776,7 @@ font-size: 19px;
   .padding-sm-emoji {
     padding-right: 8px;
     padding-left: 8px;
+    /* display: none; */
   }
   
   .bg-graphics {
@@ -793,6 +794,14 @@ font-size: 19px;
   }
   
   }
+
+  @media(max-width:420px) {
+    .img-fluid{
+      display: none;
+    }
+
+  }
+  
 
 
 
