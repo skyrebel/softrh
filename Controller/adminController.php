@@ -35,7 +35,6 @@ function defaultAction()
         "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"
     );
     
-
     for( $i = 0; $i < 5; $i++ ){
        $votesCurrentWeek[$i]['y']= $day [$i];
        $a = getAllVotesCurrentWeek($listHumeur[0]["id"], $i );
