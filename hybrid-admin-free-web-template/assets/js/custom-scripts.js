@@ -28,8 +28,8 @@
                 data: dataBar,
                 xkey: 'y',
                 ykeys: ['a', 'b', 'c'],
-                labels: ['Series A', 'Series B', 'Series C'],
-				barColors: ['red','orange','yellow'],
+                labels: ['Heureux', 'Fatigué', 'Stressé'],
+				barColors: ['yellow','orange','red'],
                 hideHover: 'auto',
                 resize: true
             });
@@ -47,14 +47,14 @@
       xkey: 'y',
       ykeys: ['a', 'b', 'c'],
       parseTime: false,
-      labels: ['Total Income', 'Total Outcome'],
+      labels: ['Heureux','Fatigué','Stressé'],
       fillOpacity: 0.6,
       hideHover: 'auto',
       behaveLikeLine: true,
       resize: true,
       pointFillColors:['#ffffff'],
       pointStrokeColors: ['black'],
-       lineColors:['red','orange','yellow']
+       lineColors:['yellow','orange','red']
 	  
             });
            
@@ -82,8 +82,7 @@
 			if($(this).hasClass('closed')){
 				$('.navbar-side').animate({left: '0px'});
 				$(this).removeClass('closed');
-				$('#page-wrapper').animate({'margin-left' : '260px'});
-				
+				$('#page-wrapper').animate({'margin-left' : '260px'});	
 			}
 			else{
 			    $(this).addClass('closed');
