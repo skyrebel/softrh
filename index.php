@@ -1,6 +1,5 @@
 <?php
 
-  
    $uri = $_SERVER['REQUEST_URI'];
 
    $controller = $uri;
@@ -10,7 +9,7 @@
        $controller = substr( $uri, 0,$positionSlash );
       
    }
-
+  
    switch($controller){
        case "/" :
         require_once 'controller/defaultController.php';

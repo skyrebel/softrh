@@ -488,7 +488,7 @@ color: #fff !important;
 	text-shadow:none;
 }
 .sidebar-collapse > .nav > li > a {
-	padding: 12px 10px;
+	padding: 45px 10px;
 }
 .sidebar-collapse > .nav > li {
 	border-bottom: 1px solid rgba(107, 108, 109, 0.19);
@@ -692,6 +692,11 @@ font-size: 19px;
   font-weight: bold;
 }
 
+.margin-chart {
+  margin-bottom: 50px;
+  border-radius: 15px;
+}
+
 
 /* -----------------------------------------------------------------------------------------------------------
                      *MEDIA QUERY*
@@ -703,7 +708,7 @@ font-size: 19px;
     padding-bottom: 20px;
     border-radius: 10px;
   }
-
+  
 }
 
 
@@ -774,9 +779,9 @@ font-size: 19px;
   }
   
   .padding-sm-emoji {
-    padding-right: 8px;
-    padding-left: 8px;
-    /* display: none; */
+    align-items: center;    
+    padding-right: 20px;
+    padding-left: 30px;
   }
   
   .bg-graphics {
@@ -797,6 +802,11 @@ font-size: 19px;
 
   @media(max-width:420px) {
     .img-fluid{
+      display: none;
+    }
+
+    .padding-sm-emoji{
+
       display: none;
     }
 
