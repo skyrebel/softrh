@@ -85,18 +85,7 @@ function defaultAction()
 
 
     ]);
-
-
-    
-   
-  
-    
-    
-    
- 
 }
-
-
 
 function serviceAction()
 {
@@ -192,24 +181,8 @@ function serviceAction()
         'listOfDayMonth' => $listOfDayMonth
 
 
-    ]);
-
-
-    
-   
-  
-    
-    
-    
- 
+    ]); 
 }
-
-
-
-
-
-
-
 $action = 'default';
 
 
