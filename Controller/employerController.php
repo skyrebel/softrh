@@ -93,7 +93,7 @@ function voteAction()
     $id_user = $_SESSION['user']['id'];
     
     $verifhasvote = verifHasVoted($id_user);
-    var_dump($verifhasvote);
+   
     if ($verifhasvote !== false) { 
         $loader = new \Twig\Loader\FilesystemLoader('view');
         $twig = new \Twig\Environment($loader, [

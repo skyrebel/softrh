@@ -1,5 +1,7 @@
 <?php
+
 function getadminsAll()
+
 {
 
     global $pdo;
@@ -12,6 +14,7 @@ function getadminsAll()
 
 
 function getservicesAll()
+
 {
 
     global $pdo;
@@ -63,19 +66,10 @@ function voteHumeurMonth()
 
 }
 
-function listday()
-
-{
-    global $pdo;
-    $sql = 'SELECT id, nom from Service';
-    $sth = $pdo->prepare($sql);
-    $sth->execute();
-    return $sth->fetchAll(PDO::FETCH_ASSOC);
-
-}
-
 function getAllVotesCurrentWeek($idhumeur, $numberDay )
+
 { 
+
     global $pdo;
     $sql = "select count(date_vote)as count from vote where week(date_vote) = week(CURRENT_DATE) and id_humeur = :idhumeur  and weekday(date_vote) = :numberDay ";
     $sth = $pdo->prepare($sql);
@@ -83,6 +77,21 @@ function getAllVotesCurrentWeek($idhumeur, $numberDay )
     $sth->bindParam(':idhumeur',intval($idhumeur), PDO::PARAM_INT);    
     $sth->execute();
     return $sth->fetch(PDO::FETCH_ASSOC);
+
+}
+
+function getAllVotesCurrentMonth($idhumeur, $numberDay )
+
+{ 
+
+    global $pdo;
+    $sql = "select count(date_vote)as count from vote where week(date_vote) = week(CURRENT_DATE) and id_humeur = :idhumeur  and day(date_vote) = :numberDay ";
+    $sth = $pdo->prepare($sql);
+    $sth->bindParam(':numberDay', $numberDay, PDO::PARAM_INT);  
+    $sth->bindParam(':idhumeur',intval($idhumeur), PDO::PARAM_INT);    
+    $sth->execute();
+    return $sth->fetch(PDO::FETCH_ASSOC);
+
 }
 
 
@@ -97,4 +106,47 @@ function lastDayCurrentMonth()
     $sth->execute();
     return $sth->fetch(PDO::FETCH_ASSOC);
     
+}
+
+
+function getServiceVotesCurrentWeek($idhumeur, $numberDay, $service )
+
+{ 
+
+    global $pdo;
+    $sql = "select count(date_vote)as count from vote where week(date_vote) = week(CURRENT_DATE) and id_humeur = :idhumeur  and weekday(date_vote) = :numberDay and id_service = :idservice ";
+    $sth = $pdo->prepare($sql);
+    $sth->bindParam(':numberDay', $numberDay, PDO::PARAM_INT);  
+    $sth->bindParam(':idhumeur',intval($idhumeur), PDO::PARAM_INT); 
+    $sth->bindParam(':idservice', $service, PDO::PARAM_INT);   
+    $sth->execute();
+    return $sth->fetch(PDO::FETCH_ASSOC);
+
+}
+
+function getServiceVotesCurrentMonth($idhumeur, $numberDay, $service )
+
+{ 
+
+    global $pdo;
+    $sql = "select count(date_vote)as count from vote where week(date_vote) = week(CURRENT_DATE) and id_humeur = :idhumeur  and day(date_vote) = :numberDay and id_service = :idservice  ";
+    $sth = $pdo->prepare($sql);
+    $sth->bindParam(':numberDay', $numberDay, PDO::PARAM_INT);  
+    $sth->bindParam(':idhumeur',intval($idhumeur), PDO::PARAM_INT);
+    $sth->bindParam(':idservice', $service, PDO::PARAM_INT);      
+    $sth->execute();
+    return $sth->fetch(PDO::FETCH_ASSOC);
+
+}
+
+function selectidService($service)
+{
+
+    global $pdo;
+    $sql = 'SELECT id from service WHERE id = :service';
+    $sth = $pdo->prepare($sql);
+    $sth->bindParam(':service', $service, PDO::PARAM_INT);
+    $sth->execute();
+    return $sth->fetch(PDO::FETCH_ASSOC);
+
 }

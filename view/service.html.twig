@@ -119,11 +119,11 @@
             <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                         <li>
-                            <a href="/admin" class="active-menu"><i class="fa fa-bar-chart-o"></i>Tout les services</a>
+                            <a href="/service" class="active-menu"><i class="fa fa-bar-chart-o"></i>Tout les services</a>
                         </li>
                         {% for service in services %}
                             <li>
-                                <a href="/admin/service/{{ service.id }}" class="active-menu"><i class="fa fa-bar-chart-o"></i> {{ service.nom }}</a>
+                                <a href="/service/{{ service.id }}" class="active-menu"><i class="fa fa-bar-chart-o"></i> {{ service.nom }}</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -154,9 +154,7 @@
                         <div class="">
                             <div class="panel-heading">
                                 Humeur: Jour
-
-                                	
-
+                            </div>
                             <div class="">
                                 <div id="morris-bar-chart"></div>
                             </div>
@@ -178,8 +176,9 @@
         </div>
     </div>
         <script>
-    const   dataBar = {{votesCurrentweek|raw}};
-    const   dataLine = {{votesCurrentmonth|raw}};
+        dataBar = {{votesCurrentWeek|raw}}
+        console.log(dataBar);
+    
     </script>
     <!-- JS Scripts-->
     <!-- jQuery Js -->
