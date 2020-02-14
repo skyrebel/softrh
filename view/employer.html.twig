@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/choice.css">
+    <link rel="stylesheet" href="{{subProject}}/assets/css/choice.css">
     <title>Soft_rh</title>
 
     <title>Soft_rh</title>
@@ -38,9 +38,9 @@
                     <div class="row mx-auto text-center">
                     {% for humeur in humeurs %}
                         <div class="col-lg-4  p-md-5 p-lg-5 jello-horizontal">
-                            <a href="/employer/vote/{{ humeur.id }}"><img class="img-fluid" src="{{ humeur.emoticone }}" alt="image" width="283"
+                            <a href="{{subProject}}/employer/vote/{{ humeur.id }}"><img class="img-fluid" src="{{subProject}}/{{ humeur.emoticone }}" alt="image" width="283"
                                 height="368"></a>
-                            <div class="text-center font-weight-bold pt-3">{{ humeur.nom|convert_encoding('UTF-8', 'iso-8859-1')}}</div>
+                            <div class="text-center font-weight-bold pt-3">{{ humeur.nom|convert_encoding('UTF-8', 'UTF-8')}}</div>
                         </div>
                     {% endfor %}
                         
