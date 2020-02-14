@@ -703,7 +703,7 @@ font-size: 19px;
 --------------------------------------------------------------------------------------------------------------- */
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .bg-graphics {
+  .marge-right {
   
     padding-bottom: 20px !important;
     border-radius: 10px !important;
