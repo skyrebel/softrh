@@ -193,7 +193,6 @@ if (strpos($uri, '/', 1) !== false) {
 $action = (strpos($uri, '/', strlen($controller) + 1) === false) ? substr($uri, strpos($uri, '/', strlen($controller)) + 1) : substr($uri, strlen($controller) + 1, (strpos($uri, '/', strlen($controller) + 1) - 1) - (strlen($controller) - 1) - 1);
 }
 
-
 switch ($action) {
 
 case 'default':
