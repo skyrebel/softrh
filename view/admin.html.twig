@@ -137,21 +137,12 @@
                     {% for humeur in listHumeur %}
                         <div class="col-xs-12 col-sm-12 pb-5 padding-sm-emoji">
                             <div class="row bg-graphics marge-right ">
-<<<<<<< HEAD
-                                <div class="col-xs-12 col-sm-12 padding-sm-emoji">
-                                    <p><img href="#" class="img-fluid " src="{{ humeur.emoticone }}" alt="image" width="90"
-                                    ></p>
-                                </div>
-                                <div class="col-lg-6 col-xs-12 col-sm-12 col-md-12 padding-sm-emoji">
-                                    <p class="text-legend">{{humeur.nom |convert_encoding('UTF-8', 'iso-8859-1')}}</p>
-=======
                                 <div class="col-lg-6 padding-sm-emoji">
                                     <p><img href="#" class="img-fluid " src="{{ subProject }}/{{ humeur.emoticone }}" alt="image" width="90"
                                     ></p>
                                 </div>
                                 <div class="col-lg-6 padding-sm-emoji">
                                     <p class="text-legend">{{humeur.nom |convert_encoding('UTF-8', 'UTF-8')}}</p>
->>>>>>> c0e41d138b37ffc9c195af3e58ca52517bc5c362
                                     <div class="{{ humeur.class_color}}"></div>
                                 </div>
                             </div>
